@@ -611,7 +611,7 @@ a {
 --------------------------------------------------------------*/
 #hero-no-slider {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   overflow: hidden;
   position: relative;
   text-align: center;
