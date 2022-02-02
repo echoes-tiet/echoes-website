@@ -1,0 +1,63 @@
+READ THIS BEFORE ADDING FOOTER:-
+I DID SOME CHANGES IN FOOTER TO DISPLAY ICONS FOR SOCIALS SO
+
+<head>
+    <script src="https://kit.fontawesome.com/b5251ae5bf.js" crossorigin="anonymous"></script>
+</head>
+
+add this line in your HEAD tag which is before the body and not in your HEADER TAG
+
+
+
+COPY FROM BELOW-->
+
+<footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <!-- <div class="footer-newsletter">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Thapar Institute of Engineering & Technology <br>
+              Patiala - 147004, Punjab
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <div class="social-links mt-3">
+              <a style="width: 3em; height: 3em;" href="https://www.instagram.com/echoes.tiet/" target="_blank" class="facebook"><i class="fab fa-facebook fa-2x"></i></a>
+              <a style="width: 3em; height: 3em;" href="https://www.facebook.com/echoestiet-650396715635915/" target="_blank" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+              <a style="width: 3em; height: 3em;" href="https://www.linkedin.com/company/echoes-t-i-e-t/?viewAsMember=true" target="_blank" class="linkedin"><i class="fab fa-linkedin fa-2x"></i></a>
+              <a style="width: 3em; height: 3em;" href="mailto:echoes@thapar.edu" class="email"><i class="fas fa-envelope fa-2x"></i></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Echoes</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
