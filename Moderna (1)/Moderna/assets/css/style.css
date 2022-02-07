@@ -802,6 +802,16 @@ section {
 .features p:last-child {
   margin-bottom: 0;
 }
+/*--trying for bulletin--*/
+
+.col-md-5 img{ 
+  transition: 0.5s;
+}
+.col-md-5 img:hover{
+  box-shadow: 0 0 20px 0px #EE4540;
+  opacity: 0.9;
+}
+
 
 /*--------------------------------------------------------------
 # About
