@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 069a7f8 (Merge branch 'main' of https://github.com/echoes-tiet/echoes-website)
 READ THIS BEFORE ADDING FOOTER:-
@@ -76,6 +77,8 @@ COPY FROM BELOW-->
 >>>>>>> parent of a62ca7e (interview)
 =======
 >>>>>>> parent of a62ca7e (interview)
+=======
+>>>>>>> parent of a62ca7e (interview)
 READ THIS BEFORE ADDING FOOTER:-
 I DID SOME CHANGES IN FOOTER TO DISPLAY ICONS FOR SOCIALS SO
 
@@ -122,6 +125,7 @@ COPY FROM BELOW-->
 
           <div class="col-lg-3 col-md-6 footer-info">
             <div class="social-links mt-3">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -139,6 +143,10 @@ COPY FROM BELOW-->
               <a style="width: 3em; height: 3em;" href="https://www.instagram.com/echoes.tiet/" target="_blank" class="facebook"><i class="fab fa-facebook fa-2x"></i></a>
               <a style="width: 3em; height: 3em;" href="https://www.facebook.com/echoestiet-650396715635915/" target="_blank" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
 >>>>>>> parent of a62ca7e (interview)
+=======
+              <a style="width: 3em; height: 3em;" href="https://www.instagram.com/echoes.tiet/" target="_blank" class="facebook"><i class="fab fa-facebook fa-2x"></i></a>
+              <a style="width: 3em; height: 3em;" href="https://www.facebook.com/echoestiet-650396715635915/" target="_blank" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+>>>>>>> parent of a62ca7e (interview)
               <a style="width: 3em; height: 3em;" href="https://www.linkedin.com/company/echoes-t-i-e-t/?viewAsMember=true" target="_blank" class="linkedin"><i class="fab fa-linkedin fa-2x"></i></a>
               <a style="width: 3em; height: 3em;" href="mailto:echoes@thapar.edu" class="email"><i class="fas fa-envelope fa-2x"></i></i></a>
             </div>
@@ -156,6 +164,7 @@ COPY FROM BELOW-->
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   </footer>
 >>>>>>> bd64344bebf28a861e57aa9aa5e543d982179cdf
 =======
@@ -167,6 +176,9 @@ COPY FROM BELOW-->
 =======
   </footer>
 >>>>>>> parent of 069a7f8 (Merge branch 'main' of https://github.com/echoes-tiet/echoes-website)
+=======
+  </footer>
+>>>>>>> parent of a62ca7e (interview)
 =======
   </footer>
 >>>>>>> parent of a62ca7e (interview)
