@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 069a7f8 (Merge branch 'main' of https://github.com/echoes-tiet/echoes-website)
 READ THIS BEFORE ADDING FOOTER:-
@@ -73,6 +74,8 @@ COPY FROM BELOW-->
 >>>>>>> parent of a62ca7e (interview)
 =======
 >>>>>>> parent of a62ca7e (interview)
+=======
+>>>>>>> parent of a62ca7e (interview)
 READ THIS BEFORE ADDING FOOTER:-
 I DID SOME CHANGES IN FOOTER TO DISPLAY ICONS FOR SOCIALS SO
 
@@ -121,8 +124,13 @@ COPY FROM BELOW-->
             <div class="social-links mt-3">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <a style="width: 3em; height: 3em;" href="https://www.facebook.com/echoestiet-650396715635915/"   target="_blank" class="facebook"><i class="fab fa-facebook fa-2x"></i></a>
               <a style="width: 3em; height: 3em;" href="https://www.instagram.com/echoes.tiet/" target="_blank" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+=======
+              <a style="width: 3em; height: 3em;" href="https://www.instagram.com/echoes.tiet/" target="_blank" class="facebook"><i class="fab fa-facebook fa-2x"></i></a>
+              <a style="width: 3em; height: 3em;" href="https://www.facebook.com/echoestiet-650396715635915/" target="_blank" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+>>>>>>> parent of a62ca7e (interview)
 =======
               <a style="width: 3em; height: 3em;" href="https://www.instagram.com/echoes.tiet/" target="_blank" class="facebook"><i class="fab fa-facebook fa-2x"></i></a>
               <a style="width: 3em; height: 3em;" href="https://www.facebook.com/echoestiet-650396715635915/" target="_blank" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
@@ -145,6 +153,7 @@ COPY FROM BELOW-->
         &copy; Copyright <strong><span>Echoes</span></strong>. All Rights Reserved
       </div>
     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   </footer>
@@ -158,3 +167,6 @@ COPY FROM BELOW-->
 =======
   </footer>
 >>>>>>> parent of 069a7f8 (Merge branch 'main' of https://github.com/echoes-tiet/echoes-website)
+=======
+  </footer>
+>>>>>>> parent of a62ca7e (interview)
