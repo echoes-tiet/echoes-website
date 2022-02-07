@@ -805,7 +805,7 @@ section {
 /*--trying for bulletin--*/
 
 .col-md-5 img{ 
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .col-md-5 img:hover{
   box-shadow: 0 0 20px 0px #EE4540;
