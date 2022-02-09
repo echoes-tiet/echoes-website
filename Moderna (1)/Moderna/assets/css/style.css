@@ -426,6 +426,12 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   font-size: 48px;
   font-weight: 700;
 }
+#hero-no-slider h3 {
+  color: rgba(255, 255, 255, 0.863);
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 500;
+}
 #hero-no-slider p {
   color: #fff;
 }
