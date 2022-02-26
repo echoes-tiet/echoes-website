@@ -406,7 +406,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 --------------------------------------------------------------*/
 #hero-no-slider {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -2401,7 +2401,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 --------------------------------------------------------------*/
 #hero-no-slider {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -3987,3 +3987,4 @@ section {
 
 
 }
+
