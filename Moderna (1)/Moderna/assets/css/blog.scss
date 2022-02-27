@@ -12,7 +12,6 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 body {
 	font-family: "Baloo 2", cursive;
 	font-size: 16px;
-	color: #ffffff;
 	text-rendering: optimizeLegibility;
 	font-weight: initial;
 }
@@ -36,6 +35,7 @@ a, a:hover {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 2.5rem;
+  
 }
 
 /* Cards */
@@ -48,7 +48,7 @@ a, a:hover {
   margin: 0 0 2rem 0;
   overflow: hidden;
   position: relative;
-  color: #ffffff;
+  
 
 	&.dark {
 		background-color: #18151f;
@@ -60,6 +60,12 @@ a, a:hover {
 	.t-dark {
 		color: #18151f;
 	}
+  .t-light {
+		color: white;
+	}
+  .heading_dark{
+    color: white;
+  }
 	
   a {
     color: inherit;
