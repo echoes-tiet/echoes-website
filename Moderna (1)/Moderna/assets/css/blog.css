@@ -5,6 +5,7 @@ body {
   font-size: 16px;
   text-rendering: optimizeLegibility;
   font-weight: initial;
+  color: #336a9e;
 }
 
 .dark {
@@ -84,8 +85,6 @@ a, a:hover {
 .postcard .postcard__img {
   max-height: 180px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   position: relative;
 }
 
