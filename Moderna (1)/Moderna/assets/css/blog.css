@@ -3,9 +3,9 @@
 body {
   font-family: "Baloo 2", cursive;
   font-size: 16px;
-  color: #ffffff;
   text-rendering: optimizeLegibility;
   font-weight: initial;
+  color: #336a9e;
 }
 
 .dark {
@@ -42,7 +42,6 @@ a, a:hover {
   margin: 0 0 2rem 0;
   overflow: hidden;
   position: relative;
-  color: #ffffff;
 }
 
 .postcard.dark {
@@ -55,6 +54,14 @@ a, a:hover {
 
 .postcard .t-dark {
   color: #18151f;
+}
+
+.postcard .t-light {
+  color: white;
+}
+
+.postcard .heading_dark {
+  color: white;
 }
 
 .postcard a {
@@ -78,8 +85,6 @@ a, a:hover {
 .postcard .postcard__img {
   max-height: 180px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   position: relative;
 }
 
