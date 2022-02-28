@@ -2742,6 +2742,9 @@ section {
   animation: none;
   border-radius: 0;
 }
+.fst-italic{
+  font-size: 20px;
+}
 
 @-webkit-keyframes pulsate-btn {
   0% {
