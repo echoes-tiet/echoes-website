@@ -99,7 +99,7 @@ iframe{
 
   
     margin: 0 auto;
-    background-color: #777;
+   
     display: block;
     border-style:none;
   
@@ -958,12 +958,12 @@ section {
 }
 .service-details .card {
   border: 0;
-  padding: 0 30px;
+  padding: 0 70px;
   margin-bottom: 60px;
   position: relative;
 }
 .service-details .card-img {
-  width: calc(100% + 60px);
+  width: calc(100% );
   margin-left: -30px;
   overflow: hidden;
   z-index: 9;
@@ -2971,7 +2971,7 @@ section {
 }
 .service-details .card {
   border: 0;
-  padding: 0 30px;
+  padding: 0 50px;
   margin-bottom: 60px;
   position: relative;
 }
