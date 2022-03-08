@@ -835,6 +835,12 @@ section {
 .about p:last-child {
   margin-bottom: 0;
 }
+.about h1{
+  color: rgba(110, 0, 0, 0.788);
+  font-size:31px;
+  font-weight: 400;
+}
+
 
 /*--------------------------------------------------------------
 # Facts
@@ -2839,6 +2845,15 @@ section {
 .about p:last-child {
   margin-bottom: 0;
 }
+.about img{
+  height: 450px;
+}
+.about p1 {
+  font-size: 20px;
+}
+.about p{
+  line-height: 1.6;
+}
 
 /*--------------------------------------------------------------
 # Facts
@@ -3999,7 +4014,9 @@ section {
 }
 #footer .credits a {
   color: #a2cce3;
-
-
 }
 
+.member .inter-img{
+  margin-left: 25px;
+  object-position: 200px;
+}
