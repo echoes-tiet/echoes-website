@@ -826,6 +826,7 @@ section {
   font-size: 30px;
   font-family: 'Work Sans';
   font-weight: 400;
+  letter-spacing: 1.3px;
 }
 .features h1{
   font-size: 32px;
@@ -1261,7 +1262,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-  background: #fff;
+  background: #272323;
   padding-bottom: 30px;
 }
 .team .member {
