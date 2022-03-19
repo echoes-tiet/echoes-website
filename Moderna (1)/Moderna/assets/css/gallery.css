@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   background: none;
 }
 #header.header-scrolled {
-  background: rgba(30, 67, 86, 0.8);
+  background: rgb(252 109 94 / 50%);
   height: 60px;
 }
 #header .logo h1 {
@@ -544,7 +544,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   background: none;
 }
 #header.header-scrolled {
-  background: rgba(30, 67, 86, 0.8);
+  background: rgb(252 109 94 / 50%);
   height: 60px;
 }
 #header .logo h1 {
@@ -765,7 +765,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   top: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/hero-bg.jpg") center top no-repeat;
+  background: linear-gradient(to right, rgb(252 109 94 / 50%), rgba(30, 67, 86, 0.6)), url("../img/hero-bg.jpg") center top no-repeat;
 }
 #hero-no-slider h2 {
   color: #fff;
@@ -835,7 +835,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   top: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/hero-bg.jpg") center top no-repeat;
+  background: linear-gradient(to right, rgb(252 109 94 / 50%), rgba(30, 67, 86, 0.6)), url("../img/hero-bg.jpg") center top no-repeat;
 }
 #hero-no-slider h2 {
   color: #fff;
