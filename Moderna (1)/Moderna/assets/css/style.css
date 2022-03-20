@@ -817,12 +817,12 @@ section {
   margin-bottom: 0;
 }
 .features p{
-  color: rgba(222, 222, 222, 1);
+  color: rgba(210, 241, 219, 1);
   font-family: 'Product Sans';
   font-size: 18px;
 }
 .features h2{
-  color: #7FAA8B;
+  color: #FC6D5E;
   font-size: 30px;
   font-family: 'Work Sans';
   font-weight: 400;
@@ -3325,16 +3325,16 @@ section {
 .team .member .member-info span {
   display: block;
   font-size: 13px;
-  text-transform: uppercase;
+  text-transform: initial;
   font-weight: 400;
   margin-bottom: 15px;
-  color: rgba(252, 109, 94, 1);
+  color: rgba(127, 170, 139, 1);
 }
 .team .member .member-info p {
   font-style: italic;
   font-size: 14px;
   line-height: 26px;
-  color: #666;
+  color: rgba(210, 241, 219, 1);
 }
 .team .member:hover .social {
   bottom: 0;
@@ -3344,6 +3344,10 @@ section {
 .team .member:hover .social a, .team .member:hover .social i {
   line-height: 0;
   font-size: 18px;
+}
+.team h4{
+  color: #FC6D5E;
+  font-family: 'Work Sans';
 }
 
 /*--------------------------------------------------------------
