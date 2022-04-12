@@ -22,7 +22,7 @@ div:target .card-face:before {
   perspective: 1000px;
   position: relative;
   background-color: rgb(233, 233, 233);
-  border: rgb(233, 233, 233) solid;
+  border: #131313 solid;
 }
 .card:hover .card-face {
   animation: flip-2 1s;
