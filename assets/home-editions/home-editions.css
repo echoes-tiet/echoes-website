@@ -1,0 +1,144 @@
+
+.card-holder {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 15em;
+  padding-bottom: 40px;
+}
+
+div:target .card-face {
+  animation: flip-2 1s;
+  animation-fill-mode: forwards;
+}
+div:target .card-face:before {
+  animation: shadow-2 1s;
+  animation-fill-mode: forwards;
+}
+
+.card {
+  display: inline-block;
+  perspective: 1000px;
+  position: relative;
+  background-color: rgb(233, 233, 233);
+  border: #131313 solid;
+}
+.card:hover .card-face {
+  animation: flip-2 1s;
+  animation-fill-mode: forwards;
+}
+.card:hover .card-face:before {
+  animation: shadow-2 1s;
+  animation-fill-mode: forwards;
+}
+
+.card-face {
+  display: block;
+  width: 300px;
+  height: 400px;
+  transform-origin: bottom;
+  animation: flip 1s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+.card-face .front, .card-face .back, .card-face img {
+  width: inherit;
+  height: inherit;
+}
+.card-face:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  transform-origin: bottom;
+  animation: shadow 1s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.card-face {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(50deg) rotateY(0deg);
+  }
+  60% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(180deg);
+  }
+}
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+    transform: rotateX(0deg) translateZ(-60px) scale(0.85);
+    opacity: 1;
+  }
+  60% {
+    transform: rotateX(95deg) translateZ(-40px) scaleY(0.15) scaleX(0.65) rotateY(0);
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotateX(95deg) translateZ(-40px) scaleY(0.05) scaleX(0.65) rotateY(0);
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+    opacity: 0.25;
+  }
+}
+@keyframes flip-2 {
+  0% {
+    transform: rotateX(50deg) rotateY(0deg);
+  }
+  60% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(180deg);
+  }
+}
+@keyframes shadow-2 {
+  0% {
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+    transform: rotateX(0deg) translateZ(-60px) scale(0.85);
+    opacity: 1;
+  }
+  60% {
+    transform: rotateX(95deg) translateZ(-40px) scaleY(0.15) scaleX(0.65) rotateY(0);
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotateX(95deg) translateZ(-40px) scaleY(0.05) scaleX(0.65) rotateY(0);
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+    opacity: 0.25;
+  }
+}
