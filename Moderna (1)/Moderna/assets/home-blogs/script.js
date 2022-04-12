@@ -2,7 +2,7 @@
         Album Cover Slider
 --------------------------------*/
 //start added by Chase
-var a = document.getElementsByTagName("a");
+var a = document.getElementsByClassName("blogLink");
 var cfImg = document.getElementsByClassName("coverflow__image")
 
 var scaleI = 0;
