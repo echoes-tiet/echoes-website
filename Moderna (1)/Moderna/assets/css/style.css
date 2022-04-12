@@ -4058,3 +4058,19 @@ section {
   margin-left: 25px;
   object-position: 200px;
 }
+
+/*--Team trinity photos--*/
+.roww {
+  display: flex;
+}
+
+.columnn {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .columnn {
+    width: 100%;
+  }
+}
