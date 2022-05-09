@@ -431,6 +431,8 @@ iframe{
   overflow: hidden;
   position: relative;
   text-align: center;
+  font-family: work-sans;
+   font-weight: 700;
 }
 #hero-no-slider::before {
   content: "";
@@ -1323,10 +1325,10 @@ section {
   color: rgba(252, 109, 94, 1);
 }
 .team .member .member-info p {
-  font-style: italic;
+  font-style: 'Product Sans';
   font-size: 14px;
   line-height: 26px;
-  color: #666;
+  color: rgba(210, 241, 219, 1);
 }
 .team .member:hover .social {
   bottom: 0;
@@ -3340,10 +3342,11 @@ section {
   color: rgba(127, 170, 139, 1);
 }
 .team .member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 26px;
   color: rgba(210, 241, 219, 1);
+  font-family: 'Product Sans';
+  font-size: 18px;
+  /* line-height: 26px; */
+  /* color: rgba(210, 241, 219, 1); */
 }
 .team .member:hover .social {
   bottom: 0;
