@@ -2801,10 +2801,9 @@ section {
   animation: none;
   border-radius: 0;
 }
-.fst-italic
-{
+.fst-italic{
   font-size: 20px;
-font-style: 'Product Sans';  
+  
 }
 
 @-webkit-keyframes pulsate-btn {
