@@ -1293,8 +1293,6 @@ section {
 .team .member .member-img {
   position: relative;
   overflow: hidden;
-  height: 60%;
-  width: 60%;
 }
 .team .member .social {
   position: absolute;
@@ -2807,8 +2805,7 @@ section {
 }
 .fst-italic{
   font-size: 20px;
-  font-style: 'Product Sans';  
-
+  
 }
 
 @-webkit-keyframes pulsate-btn {
