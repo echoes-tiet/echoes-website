@@ -377,7 +377,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: rgba(127, 170, 139, 1);
+  background: #1f1a1a;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -427,7 +427,6 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 #footer .footer-top {
   background: #1f1a1a;
   border-top: 1px solid rgba(252, 109, 94, 1);
-  border-bottom: 1px solid #123649;
   padding: 60px 0 30px 0;
 }
 #footer .footer-top .footer-info {
