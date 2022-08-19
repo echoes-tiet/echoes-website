@@ -23,22 +23,18 @@
   width: 25%;
 }
 
-.gallery__link {
-  margin: 2px;
-  overflow: hidden;
-}
-
-.gallery__link:hover .gallery__image {
+.gallery__thumb:hover .gallery__image {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }
 
-.gallery__link:hover .gallery__caption {
+.gallery__thumb:hover .gallery__caption {
   opacity: 1;
 }
 
 .gallery__thumb {
   position: relative;
+  overflow: hidden;
 }
 
 .gallery__image {
