@@ -55,7 +55,7 @@
   left: 0;
   padding: 25px 15px 15px;
   width: 100%;
-  font-family: 'Raleway', sans-serif;
+  font-family:"Open Sans", sans-serif;
   font-size: 16px;
   color: white;
   opacity: 0;
@@ -67,7 +67,7 @@
 /*# sourceMappingURL=styles.css.map */
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family:"Open Sans", sans-serif;
   color: #444;
 }
 
@@ -82,7 +82,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -444,7 +444,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
 }
 #footer .footer-top .social-links a {
@@ -767,7 +767,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   margin-bottom: 15px;
   font-size: 48px;
   font-weight: 700;
-  font-family: 'Work sans';
+  font-family: "Open Sans", sans-serif;
 }
 #hero-no-slider h3 {
   color: rgba(255, 255, 255, 0.863);
@@ -781,13 +781,13 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 1.7px;
-  font-family: 'Work sans';
+  font-family: "Open Sans", sans-serif;
 }
 #hero-no-slider p {
   color: #fff;
 }
 #hero-no-slider .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -842,7 +842,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   color: #fff;
 }
 #hero-no-slider .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;

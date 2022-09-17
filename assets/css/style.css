@@ -27,7 +27,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -133,7 +133,7 @@ iframe{
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: "Open Sans", sans-serif;
+  font-family:"Open Sans", sans-serif;
   font-size: 14px;
   color: #fff;
   white-space: nowrap;
@@ -356,7 +356,7 @@ iframe{
   height: auto;
 }
 #hero .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -441,7 +441,7 @@ iframe{
   overflow: hidden;
   position: relative;
   text-align: center;
-  font-family: work-sans;
+  font-family:"Open Sans", sans-serif;
    font-weight: 700;
 }
 #hero-no-slider::before {
@@ -458,7 +458,7 @@ iframe{
   margin-bottom: 15px;
   font-size: 48px;
   font-weight: 700;
-  font-family: 'Helvetica Neue';
+  font-family: "Open Sans", sans-serif;
   
 }
 #hero-no-slider h3 {
@@ -471,7 +471,7 @@ iframe{
   color: #fff;
 }
 #hero-no-slider .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -839,13 +839,13 @@ section {
 }
 .features p{
   color: rgba(210, 241, 219, 1);
-  font-family: 'Product Sans';
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
 }
 .features h2{
   color: #FC6D5E;
   font-size: 30px;
-  font-family: 'Work Sans';
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 1.3px;
 }
@@ -895,7 +895,7 @@ section {
 .facts .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -1119,7 +1119,7 @@ section {
   transition: none;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
   transition: 0.3s;
 }
 .pricing .get-started-btn:hover {
@@ -1177,7 +1177,7 @@ section {
   color: #444;
   transition: all 0.3s ease-in-out;
   border-bottom: 2px solid #fff;
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   border-color: rgba(252, 109, 94, 1);
@@ -1965,7 +1965,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
   color: #fff;
 }
 #footer .footer-top .social-links a {
@@ -2071,7 +2071,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -2392,7 +2392,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   height: auto;
 }
 #hero .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -2486,7 +2486,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   color: #fff;
 }
 #hero-no-slider .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -2912,7 +2912,7 @@ section {
 .facts .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -3136,7 +3136,7 @@ section {
   transition: none;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   transition: 0.3s;
 }
 .pricing .get-started-btn:hover {
@@ -3194,7 +3194,7 @@ section {
   color: #444;
   transition: all 0.3s ease-in-out;
   border-bottom: 2px solid #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   border-color: rgba(252, 109, 94, 1);
@@ -3353,7 +3353,7 @@ section {
 }
 .team .member .member-info p {
   color: rgba(210, 241, 219, 1);
-  font-family: 'Product Sans';
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   /* line-height: 26px; */
   /* color: rgba(210, 241, 219, 1); */
@@ -3369,7 +3369,7 @@ section {
 }
 .team h4{
   color: #FC6D5E;
-  font-family: 'Work Sans';
+  font-family:"Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -3987,7 +3987,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
 }
 #footer .footer-top .social-links a {
@@ -4112,7 +4112,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -4441,7 +4441,7 @@ iframe{
   height: auto;
 }
 #hero .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -4541,7 +4541,7 @@ iframe{
   margin-bottom: 15px;
   font-size: 48px;
   font-weight: 700;
-  font-family: 'Helvetica Neue';
+  font-family: "Open Sans", sans-serif;
   
 }
 #hero-no-slider h3 {
@@ -4554,7 +4554,7 @@ iframe{
   color: #fff;
 }
 #hero-no-slider .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -4922,13 +4922,13 @@ section {
 }
 .features p{
   color: rgba(210, 241, 219, 1);
-  font-family: 'Product Sans';
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
 }
 .features h2{
   color: #FC6D5E;
   font-size: 30px;
-  font-family: 'Work Sans';
+  font-family:"Open Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 1.3px;
 }
@@ -4978,7 +4978,7 @@ section {
 .facts .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -5202,7 +5202,7 @@ section {
   transition: none;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   transition: 0.3s;
 }
 .pricing .get-started-btn:hover {
@@ -5260,7 +5260,7 @@ section {
   color: #444;
   transition: all 0.3s ease-in-out;
   border-bottom: 2px solid #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   border-color: rgba(252, 109, 94, 1);
@@ -6048,7 +6048,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
 }
 #footer .footer-top .social-links a {
@@ -6154,7 +6154,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -6475,7 +6475,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   height: auto;
 }
 #hero .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -6569,7 +6569,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   color: #fff;
 }
 #hero-no-slider .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -6995,7 +6995,7 @@ section {
 .facts .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -7219,7 +7219,7 @@ section {
   transition: none;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
   transition: 0.3s;
 }
 .pricing .get-started-btn:hover {
@@ -7277,7 +7277,7 @@ section {
   color: #444;
   transition: all 0.3s ease-in-out;
   border-bottom: 2px solid #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   border-color: rgba(252, 109, 94, 1);
@@ -7451,7 +7451,7 @@ section {
 }
 .team h4{
   color: #FC6D5E;
-  font-family: 'Work Sans';
+  font-family:"Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -8069,7 +8069,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family:"Open Sans", sans-serif;
   color: #fff;
 }
 #footer .footer-top .social-links a {
