@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Number Generator with Drum Roll Sound</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #353535;
+        }
+
+        #generator {
+            margin: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #353535;
+        }
+        .output{
+            color: white;
+        }
+        input {
+            padding: 5px;
+            font-size: 18px;
+            border: 2px solid #ff7f50;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff7f50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff5a36;
+        }
+
+        #randomNumber {
+            font-size: 48px;
+            color: #353535;
+            margin: 20px;
+        }
+        .red{
+          display: flex;
+          justify-content: center;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          margin-top: 50px;
+          transform: scale(0.2);
+          background-color: #7c7c7c;
+        }
+ 
+    </style>
+</head>
+<body>
+    <h1>🎉 Welcome Batch Of 2027 🥁</h1>
+    <div id="generator">
+        <label for="upperBound">Choose an Upper Bound:</label>
+        <input type="number" id="upperBound" value="10">
+        <button onclick="generateRandomNumber()">Generate Number</button>
+      
+    </div>
+    <div id="randomNumber">
+     <span id="randomNumber">-</span>
+    </div>
+    
+    <div class="red" onclick="redirectToAnotherPage()"> 
+    
+        <img src="snoop.png" alt="">
+    </div>
+           
+
+    <script>
+        function generateRandomNumber() {
+            const upperBound = parseInt(document.getElementById('upperBound').value);
+            const randomNumber = Math.floor(Math.random() * upperBound) + 1;
+            document.getElementById('randomNumber').textContent = "-";
+            setTimeout(function() {
+                document.getElementById('randomNumber').textContent = randomNumber;
+            }, 1000);
+        }
+        
+        generateRandomNumber();
+
+        function redirectToAnotherPage() {
+            window.location.href = 'spin.html'; // Change to your desired page URL
+        }
+    </script>
+</body>
+</html>

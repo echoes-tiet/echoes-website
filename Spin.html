@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin The Wheel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dare 'O' Wheel</h1>
+    <div class="container">
+        <div class="spinBtn">SPIN</div>
+            <div class="wheel">
+                <div class="dare" style="--i:1;--clr:#db7093;"><span>Dare1</span></div>
+            
+            
+                <div class="dare" style="--i:2;--clr:#a4db70;"><span>Dare2</span></div>
+           
+            
+                <div class="dare" style="--i:3;--clr:#db7093;"><span>Dare3</span></div>
+          
+            
+                <div class="dare" style="--i:4;--clr:#9270db;"><span>Dare4</span></div>
+         
+            
+                <div class="dare" style="--i:5;--clr:#db7070;"><span>Dare5</span></div>
+        
+            
+                <div class="dare" style="--i:6;--clr:#f9ab01;"><span>Dare6</span></div>
+         
+
+                <div class="dare" style="--i:7;--clr:#036cff;"><span>Dare7</span></div>
+            
+
+                <div class="dare" style="--i:8;--clr:#00ffae;"><span>Dare8</span></div>
+            
+
+                <div class="dare" style="--i:9;--clr:#e1ff00;"><span>Dare9</span></div>
+            
+            
+                <div class="dare" style="--i:10;--clr:#14c136;"><span>Dare10</span></div>
+            
+        </div>
+    </div>
+    <div class="selector" onclick="redirectToAnotherPage()">
+        <p>
+            Back to Selector
+            
+        </p>
+    </div>
+    <div class="dareList">
+
+    
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+        <li>Dare</li>
+    
+</div>
+    <script>
+        let wheel=document.querySelector('.wheel');  
+        let spinBtn=document.querySelector('.spinBtn');  
+        let value= Math.ceil(Math.random()*3600);
+        spinBtn.onclick=function(){
+wheel.style.transform="rotate("+(value+1000)+"deg)";
+value+=Math.ceil(Math.random()*3600);
+        }
+        function redirectToAnotherPage() {
+            window.location.href = 'random.html'; // Change to your desired page URL
+        }
+    </script>
+</body>
+</html>
