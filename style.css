@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=Poppins:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #353535;
+}
+h1{
+    margin-bottom: 50px;
+    font-family:"Handjet" ;
+    font-size: 5em;
+    font-weight: bolder;
+    color: white;
+    
+}
+.container{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container .spinBtn{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #353535;
+    letter-spacing: 0.1em;
+    border: 4px solid black;
+    cursor: pointer;
+    user-select: none;
+}
+.container .spinBtn::before{
+    content: "";
+    position: absolute;
+    top: -28px;
+    width: 20px;
+    height: 30px;
+    background: white;
+    clip-path: polygon(50% 0%, 15% 100%,85% 100%);
+}
+.container .wheel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px #353535,
+    0 0 0 15px #fff,
+    0 0 0 18px #111;
+    transition: transform 5s ease-in-out;
+    
+}
+.container .wheel .dare{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(45deg * var(--i)));
+    clip-path: polygon(0 0, 56% 0 , 100% 100%,0 56%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+.container .wheel .dare span{
+    position: relative;
+    transform: rotate(36deg);
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+    
+}
+.container .spinBtn::after{
+    content: ' ';
+    position: absolute;
+    font-size: 0.75em;
+    font-weight: 500;
+}
+.selector p{
+    margin-top: 40px;
+    width: auto;
+    height: 30px;
+    padding: 5px;
+    user-select: none;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+.dareList{
+    width: 1000px;
+
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 2em;
+    border: 1px solid rgb(255, 255, 255);
+  border-collapse: collapse;
+  list-style-type: decimal;
+}
