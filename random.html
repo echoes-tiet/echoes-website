@@ -1,97 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Random Number Generator with Drum Roll Sound</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #353535;
-        }
-
-        #generator {
-            margin: 20px;
-        }
-
-        label {
-            font-size: 18px;
-            color: #353535;
-        }
-        .output{
-            color: white;
-        }
-        input {
-            padding: 5px;
-            font-size: 18px;
-            border: 2px solid #ff7f50;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #ff7f50;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            margin-top: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #ff5a36;
-        }
-
-        #randomNumber {
-            font-size: 48px;
-            color: #353535;
-            margin: 20px;
-        }
-        .red{
-          display: flex;
-          justify-content: center;
-          justify-content: center;
-          align-items: center;
-          width: 30px;
-          height: 30px;
-          margin-top: 50px;
-          transform: scale(0.2);
-          background-color: #7c7c7c;
-        }
- 
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <link rel="stylesheet" href="random.css">
 </head>
 <body>
-    <h1>🎉 Welcome Batch Of 2027 🥁</h1>
-    <div id="generator">
-        <label for="upperBound">Choose an Upper Bound:</label>
-        <input type="number" id="upperBound" value="10">
-        <button onclick="generateRandomNumber()">Generate Number</button>
-      
+    <div class="banner">
+        <p class="typewriter">"Welcome To Echoes"</p>
     </div>
-    <div id="randomNumber">
-     <span id="randomNumber">-</span>
-    </div>
-    
-    <div class="red" onclick="redirectToAnotherPage()"> 
-    
-        <img src="snoop.png" alt="">
-    </div>
-           
+    <div class="rng">
 
+        <label for="upperBound">Choose Number of Members:   </label>
+       
+        <input type="number" id="upperBound" value="15">
+        <div class="row">
+            <div class="btn" onclick="generateRandomNumber()">
+                Generate
+            </div>
+            
+        </div>
+        <div class="output" id="randomNumber">
+            <h1 id="randomNumber">-</h1>
+        </div>
+        <div id="2" class="btn" onclick="redirectToAnotherPage()" >
+           LET'S SPIN
+        </div>
+    </div>
     <script>
         function generateRandomNumber() {
             const upperBound = parseInt(document.getElementById('upperBound').value);
