@@ -1,175 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cascade</title>
-   <link rel="stylesheet" href="registration.css">
-   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
-    </style>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="registration.css">
 </head>
+
 <body>
-
-    <div class="heading">
-        <h2 class ='Text'>
-            CASCADE 2.0
-        </h2>
-    </div>
-   <div class="container">
-    
-    <div class="teamDet">
-
-        <h3  class="subHead" style="font-weight: 1000;">Team Details:</h3>
-        <form class="row g-4" name="Cascade" method="post">
-            <div class="col-md-6">
-                <label for="TeamName" class="form-label">Team Name*</label>
-                <input type="text" class="form-control shadow-none" id="TeamName" name="TeamName" required>
-            </div>
-            <div class="col-md-6">
-                <label for="TeamLName" class="form-label">Team Leader's Name*</label>
-                <input type="text" class="form-control shadow-none" id="TeamLName" name="TeamLName" required>
-            </div>
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Team Leader's Email*</label>
-                <input type="email" class="form-control shadow-none" id="inputEmail4" name="TeamLEmail" required>
-            </div>
-            <div class="col-md-12">
-                <label for="PhoneNumber" class="form-label">Team Leader's PhoneNumber*</label>
-                <input type="number" class="form-control shadow-none" id="PhoneNumber" name="TeamLPhoneNumber" required>
-            </div>
-            <div class="col-md-6" style="padding-top: 10px; " >
-                <label for="inputState" class="form-label">Number of Members*</label>
-                <select id="inputState" class="form-select col-md-4"name="NumbeOfMembers" style="border-radius: 5px;">
+    <!-- <img  class='logo' src="logo.svg" alt=""> -->
+    <div class="wrapper">
+        <div class="box">
+            <form name="Cascade" action="post">
+                <h2>Team Details</h2>
+                <div class="input-group">
+                    <input type="text" name="TeamName" required>
+                    <label for="">Team Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="TeamLName" required>
+                    <label for="">Team Leader's Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email"  name="TeamLEmail" required>
+                    <label for="">Team Leader's Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="TeamLPhoneNumber" required>
+                    <label for="">Team Leader's Phone Number</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="NumbeOfMembers" required>
+                    <label for="">Number Of Members(Max 4)</label>
+                </div>
+                <div id="memberDetails">
                     
-                    <option selected>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-            </div>
-
-<div class="row g-4 ">
-                <h3  class="subHead" style="font-weight: 1000;">Member 1 Details:</h3>
-                
-                <div class="col-md-6">
-                    <label for="FirstName" class="form-label">First Name*</label>
-                    <input type="text" class="form-control shadow-none" name="M1Fname" id="FirstName" required>
                 </div>
-                <div class="col-md-6">
-                    <label for="LastName" class="form-label">Last Name*</label>
-                    <input type="text" class="form-control shadow-none"name="M1LastName" id="LastName" required>
-                </div>
-                <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email*</label>
-                <input type="email" class="form-control shadow-none" name="M1Email"id="inputEmail4" required>
-            </div>
-            <div class="col-md-12">
-                <label for="PhoneNumber" class="form-label">PhoneNumber*</label>
-                <input type="number" class="form-control shadow-none" name="M1PhoneNumber"id="PhoneNumber" required>
-            </div>
+                <button class="AddMember" type="button" onclick="addMember()">Add Member</button>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-            
-    
-       
-      
-     
-
-        <h3  class="subHead" style="font-weight: 1000;">Member 2 Details:</h3>
-        <div class="row g-5">
-
-            
-            <div class="col-md-6">
-                <label for="FirstName" class="form-label">First Name</label>
-                <input type="text" class="form-control shadow-none" name="M2Fname" id="FirstName" >
-            </div>
-            <div class="col-md-6">
-                <label for="LastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control shadow-none" name="M2LastName"id="LastName" >
-            </div>
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-none" name="M2Email"id="inputEmail4" >
-            </div>
-            <div class="col-md-12">
-                <label for="PhoneNumber" class="form-label">PhoneNumber</label>
-                <input type="number" class="form-control shadow-none" name="M2PhoneNumber"id="PhoneNumber" >
-            </div>
-        </div>
-            
-            
-            
-            
-
-
-
-        <h3  class="subHead" style="font-weight: 1000;">Member 3 Details:</h3>
-        <div class="row g-4">
-
-            
-            <div class="col-md-6">
-                <label for="FirstName" class="form-label">First Name</label>
-                <input type="text" class="form-control shadow-none" name="M3Fname" id="FirstName" >
-            </div>
-            <div class="col-md-6">
-                <label for="LastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control shadow-none"name="M3LastName" id="LastName" >
-            </div>
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-none"name="M3Email" id="inputEmail4" >
-            </div>
-            <div class="col-md-12">
-                <label for="PhoneNumber" class="form-label">PhoneNumber</label>
-                <input type="number" class="form-control shadow-none" name="M3PhoneNumber" id="PhoneNumber" >
-            </div>
-            
-            
-        </div>
-            
-        <h3  class="subHead" style="font-weight: 1000;">Member 4 Details:</h3>
-        <div class="row g-4">
-
-            <div class="col-md-6">
-                <label for="FirstName" class="form-label">First Name</label>
-                <input type="text" class="form-control shadow-none" name="M4Fname" id="FirstName" >
-            </div>
-            <div class="col-md-6">
-                <label for="LastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control shadow-none"name="M4LastName" id="LastName" >
-            </div>
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-none" name="M4Email"iid="inputEmail4" >
-            </div>
-            <div class="col-md-12">
-                <label for="PhoneNumber" class="form-label">PhoneNumber</label>
-                <input type="number" class="form-control shadow-none" name="M4PhoneNumber"id="PhoneNumber" >
-            </div>
-            
-            
-        </div>
-       
-            <input class="btn btn-dark col-md-10" style="margin-top: 1rem;" type="submit" value="Submit" >
-      
-        </form>
-
-
     </div>
-    </div>
- 
+
+    <script>
+        function addMember() {
+            const memberDetailsContainer = document.getElementById('memberDetails');
+            const addMemberButton = document.querySelector('.AddMember');
+            if (memberDetailsContainer.children.length < 4) { // Max 4 members
+                const memberNumber = memberDetailsContainer.children.length + 1;
+
+                const memberSection = document.createElement('div');
+                memberSection.innerHTML = `
+                    <h2>Member ${memberNumber} Details</h2>
+                    <div class="input-group">
+                        <input type="text" name="M${memberNumber}Fname" required>
+                        <label for="">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="M${memberNumber}LastName" required>
+                        <label for="">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="M${memberNumber}Email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" name="M${memberNumber}PhoneNumber" required>
+                        <label for="">Phone Number</label>
+                    </div>
+                    <button class="RemoveMember" type="button" onclick="removeMember(this)">Remove Member</button>
+                `;
+
+                memberDetailsContainer.appendChild(memberSection);
+            }
+
+            // Hide the Add Member button if there are already 4 members
+            if (memberDetailsContainer.children.length === 4) {
+                addMemberButton.style.display = 'none';
+            }
+        }
+
+        function removeMember(button) {
+            const memberDetailsContainer = document.getElementById('memberDetails');
+            const addMemberButton = document.querySelector('.AddMember');
+
+            // Remove the corresponding member section
+            const memberSection = button.parentNode;
+            memberDetailsContainer.removeChild(memberSection);
+
+            // Show the Add Member button
+            addMemberButton.style.display = 'block';
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyl_idQyVq6lW6umC5Dg0dEXQoPs2DDakHOmyGyzcu7UJ6mNk_SaXWEcTCPo_Vveh4V/exec'
+        const form = document.forms['Cascade']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you! your form is submitted successfully." ))
+            .then(() => {  window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyl_idQyVq6lW6umC5Dg0dEXQoPs2DDakHOmyGyzcu7UJ6mNk_SaXWEcTCPo_Vveh4V/exec'
-    const form = document.forms['Cascade']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thank you! your form is submitted successfully." ))
-        .then(() => {  window.location.reload(); })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+
 </html>
