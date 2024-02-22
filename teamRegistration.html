@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+    <style>
+        body{
+            background-image: url('./background.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <div class="wrapper">
+        <div class="box">
+            <form name="Cascade" action="post">
+                <h2>Team Details</h2>
+                <div class="input-group">
+                    <input type="text" name="TeamName" required>
+                    <label for="">Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="TeamLName" required>
+                    <label for="">Year</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="TeamLName" required>
+                    <label for="">Branch</label>
+                </div>
+                <div class="input-group">
+                    <input type="email"  name="TeamLEmail" required>
+                    <label for="">Thapar Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="TeamLPhoneNumber" required>
+                    <label for="">Phone Number</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="NumbeOfMembers" required>
+                    <label for="">Number Of Members(Max 4)</label>
+                </div>
+                <div class="check-box">
+                    
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function addMember() {
+            const memberDetailsContainer = document.getElementById('memberDetails');
+            const addMemberButton = document.querySelector('.AddMember');
+            if (memberDetailsContainer.children.length < 4) { // Max 4 members
+                const memberNumber = memberDetailsContainer.children.length + 1;
+
+                const memberSection = document.createElement('div');
+                memberSection.innerHTML = `
+                    <h2>Member ${memberNumber} Details</h2>
+                    <div class="input-group">
+                        <input type="text" name="M${memberNumber}Fname" required>
+                        <label for="">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="M${memberNumber}LastName" required>
+                        <label for="">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="M${memberNumber}Email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" name="M${memberNumber}PhoneNumber" required>
+                        <label for="">Phone Number</label>
+                    </div>
+                    <button class="RemoveMember" type="button" onclick="removeMember(this)">Remove Member</button>
+                `;
+
+                memberDetailsContainer.appendChild(memberSection);
+            }
+
+            // Hide the Add Member button if there are already 4 members
+            if (memberDetailsContainer.children.length === 4) {
+                addMemberButton.style.display = 'none';
+            }
+        }
+
+        function removeMember(button) {
+            const memberDetailsContainer = document.getElementById('memberDetails');
+            const addMemberButton = document.querySelector('.AddMember');
+
+            // Remove the corresponding member section
+            const memberSection = button.parentNode;
+            memberDetailsContainer.removeChild(memberSection);
+
+            // Show the Add Member button
+            addMemberButton.style.display = 'block';
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyl_idQyVq6lW6umC5Dg0dEXQoPs2DDakHOmyGyzcu7UJ6mNk_SaXWEcTCPo_Vveh4V/exec'
+        const form = document.forms['Cascade']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you! your form is submitted successfully." ))
+            .then(() => {  window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>

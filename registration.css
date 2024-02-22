@@ -80,7 +80,7 @@ element {
         max-width: 400px; /* Set maximum width for larger screens */
         height: auto; /* Auto height for dynamic content */
     background: #000;
-    box-shadow: 0 0 50px #0ef;
+    box-shadow: 0 0 50px rgb(255, 255, 255);
     border-radius: 20px;
     padding: 40px;
     overflow: none;
@@ -99,7 +99,7 @@ element {
     max-width: 400px;
     height: auto;
     background:#1a444d44; /* Semi-transparent black background */
-    box-shadow: 0 0 20px rgba(0, 239, 255, 0.5); /* Adjust the shadow color as needed */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Adjust the shadow color as needed */
     border-radius: 20px;
     padding: 40px;
     overflow: auto;
@@ -122,9 +122,9 @@ h2 {
 }
 .AddMember{
 margin-bottom:10px ;
-border: #fff;
-color: #fff;
-background-color: #4fc3dc44;
+/* border: #ffffff; */
+color: #585858;
+background-color: rgba(255, 255, 255, 0.515);
 
 }
 .input-group label {
@@ -161,7 +161,7 @@ button {
     width: 100%;
     height: 40px;
     background: rgb(255, 255, 255);
-    box-shadow: 0 0 10px #0ef;
+    box-shadow: 0 0 10px rgb(121, 124, 96);
     font-size: 16px;
     color: #000;
     font-weight: 500;
@@ -180,8 +180,8 @@ button {
 .RemoveMember{
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #4fc3dc44;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.515);
+    color: #585858;
     
 }
 /* Media Query for smaller screens */
