@@ -87,7 +87,7 @@
                      </div>
                      &nbsp;
                
-                <button type="submit" >Submit</button>
+                <button type="submit"  onclick="checkNexus()">Submit</button>
             </form>
         </div>
    
@@ -153,10 +153,13 @@
              alert("Please select atleast one event");
         }
         else{
-            if(document.getElementById('nexus').checked==true)
-            alert("Your form has been submitted. Redirecting you to a Team Registration page");
-            window.location.href = 'https://echoes-tiet.in/teamregistration';
+            if(document.getElementById('nexus').checked==true){
+
+alert("Your form has been submitted. Redirecting you to a Team Registration page");
+window.location.href = 'https://echoes-tiet.in/teamRegistration';
+}
         }
+
     }
         }
     </script>
@@ -172,7 +175,9 @@
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 // .then(response => alert("Thank you! your form is submitted successfully." ))
                 .then(() => { checkNexus()})
-                .then(() => {  window.location.reload(); })
+                .then(() => {  
+  window.location.reload();
+                     })
                 .catch(error => console.error('Error!', error.message))
             })
         
