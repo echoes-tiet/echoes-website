@@ -17,12 +17,30 @@
             background-size: cover;
             background-position: center;
         }
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* overflow: hidden; */
+            /* background: green; */
+        }
+        img{
+            overflow: hidden;
+            width: 100vw;
+            height: max-content;
+        
+            
+        }
+   
     </style>
         
     <div class="wrapper">
         <div class="box">
             <form name="Cascade" action="post">
-                <h2> CASCADE 2.0</h2>
+                <div class="logo">
+                    
+                    <img src="cascade name.png" alt="">
+                </div>
                 <div class="input-group">
                   <td>  <input type="text" name="Name" id="name" required>
                     <label for="">Name</label></td>
@@ -134,8 +152,8 @@
         }
         else{
             if(document.getElementById('nexus').checked==true)
-            // alert("Your form has been submitted. Redirecting you to a new page");
-            window.location.href = 'https://echoes-tiet.in/teamRegistration';
+            alert("Your form has been submitted. Redirecting you to a Team Registration page");
+            window.location.href = '';
         }
     }
         }

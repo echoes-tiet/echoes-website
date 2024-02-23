@@ -60,7 +60,7 @@ element {
     /* overflow-y: auto; Enable vertical scroll for the wrapper */
     max-height: 80vh; 
     scrollbar-color: blue;
-    margin: 20px; /* Add margin for better spacing */
+    margin: px; /* Add margin for better spacing */
     z-index: 1; /* Set z-index to bring it above the background */
 }
 .wrapper {

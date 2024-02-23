@@ -15,11 +15,28 @@
             background-size: cover;
             background-position: center;
         }
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* overflow: hidden; */
+            /* background: green; */
+        }
+        img{
+            overflow: hidden;
+            width: 100vw;
+            height: max-content;
+        
+            
+        }
     </style>
     <div class="wrapper">
         <div class="box">
             <form name="Cascade" action="post">
-                <h2>Team Details</h2>
+                <div class="logo">
+                    
+                    <img src="cascade name.png" alt="">
+                </div>
                 <div class="input-group">
                     <input type="text" name="TeamName" required>
                     <label for="">Team Name</label>
