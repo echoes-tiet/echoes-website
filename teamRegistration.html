@@ -22,31 +22,28 @@
                 <h2>Team Details</h2>
                 <div class="input-group">
                     <input type="text" name="TeamName" required>
-                    <label for="">Name</label>
+                    <label for="">Team Name</label>
                 </div>
                 <div class="input-group">
                     <input type="text" name="TeamLName" required>
-                    <label for="">Year</label>
-                </div>
-                <div class="input-group">
-                    <input type="text" name="TeamLName" required>
-                    <label for="">Branch</label>
+                    <label for="">Team Leader's Name</label>
                 </div>
                 <div class="input-group">
                     <input type="email"  name="TeamLEmail" required>
-                    <label for="">Thapar Email</label>
+                    <label for="">Team Leader's Email</label>
                 </div>
                 <div class="input-group">
                     <input type="number" name="TeamLPhoneNumber" required>
-                    <label for="">Phone Number</label>
+                    <label for="">Team Leader's Phone Number</label>
                 </div>
                 <div class="input-group">
                     <input type="number" name="NumbeOfMembers" required>
                     <label for="">Number Of Members(Max 4)</label>
                 </div>
-                <div class="check-box">
+                <div id="memberDetails">
                     
                 </div>
+                <button class="AddMember" type="button" onclick="addMember()">Add Member</button>
                 <button type="submit">Submit</button>
             </form>
         </div>

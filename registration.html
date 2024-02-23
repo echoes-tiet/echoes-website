@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="registration.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="teamRed.css">
 </head>
 
 <body>
@@ -16,37 +18,59 @@
             background-position: center;
         }
     </style>
+        
     <div class="wrapper">
         <div class="box">
             <form name="Cascade" action="post">
-                <h2>Team Details</h2>
+                <h2> CASCADE 2.0</h2>
                 <div class="input-group">
-                    <input type="text" name="TeamName" required>
-                    <label for="">Team Name</label>
+                  <td>  <input type="text" name="Name" id="name" required>
+                    <label for="">Name</label></td>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="TeamLName" required>
-                    <label for="">Team Leader's Name</label>
+                    <input type="number" name="RollNumber" id="rollno" required>
+                    <label for="">Roll Number</label>
                 </div>
                 <div class="input-group">
-                    <input type="email"  name="TeamLEmail" required>
-                    <label for="">Team Leader's Email</label>
+                    <input type="number" name="PhoneNumber" id="rollno" required>
+                    <label for="">Phone Number</label>
                 </div>
                 <div class="input-group">
-                    <input type="number" name="TeamLPhoneNumber" required>
-                    <label for="">Team Leader's Phone Number</label>
+                    <input type="number"  name="Year" id="year" required>
+                    <label for="">Year</label>
                 </div>
                 <div class="input-group">
-                    <input type="number" name="NumbeOfMembers" required>
-                    <label for="">Number Of Members(Max 4)</label>
+                    <input type="text" name="Branch" id="branch" required>
+                    <label for="">Branch</label>
                 </div>
-                <div id="memberDetails">
+                <div class="Events">
                     
-                </div>
-                <button class="AddMember" type="button" onclick="addMember()">Add Member</button>
-                <button type="submit">Submit</button>
+                    <div>Events :</div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="childHood" type="checkbox" value="1" id="replay">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Childhood Replay
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" name="NewsRoom" type="checkbox" value="1" id="nexus" >
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Newsroom Nexus
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name='TriviaNight' value="1" id="night">
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Trivia Night
+                        </label>
+                      </div>
+                     </div>
+                     &nbsp;
+               
+                <button type="submit" >Submit</button>
             </form>
         </div>
+   
     </div>
 
     <script>
@@ -98,18 +122,40 @@
             // Show the Add Member button
             addMemberButton.style.display = 'block';
         }
+        function checkNexus(){
+              if(document.getElementById('name').value=='' || document.getElementById('rollno').value=='' || document.getElementById('year').value=='' || document.getElementById('branch').value=='')
+              {
+                alert("Please fill all the fields");
+        }
+        else{
+            if(document.getElementById('replay').checked!=true && document.getElementById('nexus').checked!=true && document.getElementById('night').checked!=true )
+           {
+             alert("Please select atleast one event");
+        }
+        else{
+            if(document.getElementById('nexus').checked==true)
+            // alert("Your form has been submitted. Redirecting you to a new page");
+            window.location.href = 'https://echoes-tiet.in/teamRegistration';
+        }
+    }
+        }
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyl_idQyVq6lW6umC5Dg0dEXQoPs2DDakHOmyGyzcu7UJ6mNk_SaXWEcTCPo_Vveh4V/exec'
-        const form = document.forms['Cascade']
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => alert("Thank you! your form is submitted successfully." ))
-            .then(() => {  window.location.reload(); })
-            .catch(error => console.error('Error!', error.message))
-        })
+        
+
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz3gC3Vt3IhSYG4wMQ3YodS_nwHRYM0nsBvyzIBB43hG9KRait9EUX33vHxoX_3Bldi/exec'
+            const form = document.forms['Cascade']
+            
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                // .then(response => alert("Thank you! your form is submitted successfully." ))
+                .then(() => { checkNexus()})
+                .then(() => {  window.location.reload(); })
+                .catch(error => console.error('Error!', error.message))
+            })
+        
       </script>
 </body>
 
