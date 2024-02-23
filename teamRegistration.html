@@ -65,14 +65,13 @@
             </form>
         </div>
     </div>
-
     <script>
         function addMember() {
             const memberDetailsContainer = document.getElementById('memberDetails');
             const addMemberButton = document.querySelector('.AddMember');
             if (memberDetailsContainer.children.length < 4) { // Max 4 members
                 const memberNumber = memberDetailsContainer.children.length + 1;
-
+    
                 const memberSection = document.createElement('div');
                 memberSection.innerHTML = `
                     <h2>Member ${memberNumber} Details</h2>
@@ -94,28 +93,47 @@
                     </div>
                     <button class="RemoveMember" type="button" onclick="removeMember(this)">Remove Member</button>
                 `;
-
+    
                 memberDetailsContainer.appendChild(memberSection);
             }
-
+    
             // Hide the Add Member button if there are already 4 members
             if (memberDetailsContainer.children.length === 4) {
                 addMemberButton.style.display = 'none';
             }
         }
-
+    
         function removeMember(button) {
             const memberDetailsContainer = document.getElementById('memberDetails');
             const addMemberButton = document.querySelector('.AddMember');
-
+    
             // Remove the corresponding member section
             const memberSection = button.parentNode;
             memberDetailsContainer.removeChild(memberSection);
-
+    
+            // Update member numbers and display
+            const remainingMembers = memberDetailsContainer.children;
+            for (let i = 0; i < remainingMembers.length; i++) {
+                const currentMember = remainingMembers[i];
+                const memberNumber = i + 1;
+    
+                // Update the member number in the header
+                currentMember.querySelector('h2').innerText = `Member ${memberNumber} Details`;
+    
+                // Update names of the input fields
+                const inputElements = currentMember.querySelectorAll('input');
+                inputElements.forEach((input) => {
+                    const currentName = input.getAttribute('name');
+                    const updatedName = currentName.replace(/\d+/, memberNumber);
+                    input.setAttribute('name', updatedName);
+                });
+            }
+    
             // Show the Add Member button
             addMemberButton.style.display = 'block';
         }
     </script>
+    
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyl_idQyVq6lW6umC5Dg0dEXQoPs2DDakHOmyGyzcu7UJ6mNk_SaXWEcTCPo_Vveh4V/exec'
         const form = document.forms['Cascade']
