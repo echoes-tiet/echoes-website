@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const newsletters = await getCollection('newsletters');
+  return newsletters.map((issue) => ({ params: { slug: issue.id }, props: { issue } }));
+}
+
+const { issue } = Astro.props;
+---
+
+<Layout title={`${issue.data.title} — Echoes Newsletter`}>
+  <div class="mx-auto max-w-5xl px-5 py-16">
+    <a href="/newsletters/" class="text-sm font-semibold text-accent hover:underline">&larr; All newsletters</a>
+
+    <h1 class="mt-4 font-display text-4xl font-bold text-paper md:text-5xl">{issue.data.title}</h1>
+    {issue.data.blurb && <p class="mt-4 max-w-2xl text-muted">{issue.data.blurb}</p>}
+
+    {
+      issue.data.embedUrl && (
+        <div class="mt-10 overflow-hidden border border-black/10 bg-surface">
+          <iframe
+            src={issue.data.embedUrl}
+            title={issue.data.title}
+            class="h-[80vh] w-full"
+            allowfullscreen
+            allowtransparency
+          />
+        </div>
+      )
+    }
+  </div>
+</Layout>

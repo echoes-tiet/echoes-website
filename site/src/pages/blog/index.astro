@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Card from '../../components/Card.astro';
+import { parseDateLabel } from '../../lib/dates';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => parseDateLabel(b.data.publishedLabel) - parseDateLabel(a.data.publishedLabel)
+);
+
+function excerpt(body: string) {
+  const text = body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.length > 160 ? `${text.slice(0, 160)}…` : text;
+}
+---
+
+<Layout title="Blog — Echoes" description="Personal essays, reviews, and reflections from the Echoes team.">
+  <PageHero eyebrow="Blog" title="Stories from the Echoes desk" subtitle="Essays, reviews, and reflections written by the club." />
+
+  <section class="mx-auto max-w-7xl px-5 py-14">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        posts.map((post) => (
+          <Card
+            href={`/blog/${post.id}/`}
+            title={post.data.title}
+            blurb={excerpt(post.body ?? '')}
+            meta={post.data.author ? `By ${post.data.author}` : undefined}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

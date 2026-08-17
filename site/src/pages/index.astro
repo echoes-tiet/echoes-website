@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import EditionsCarousel from '../components/EditionsCarousel.astro';
+import { parseDateLabel } from '../lib/dates';
+
+const editions = (await getCollection('editions')).sort((a, b) => b.data.number - a.data.number);
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => parseDateLabel(b.data.publishedLabel) - parseDateLabel(a.data.publishedLabel)
+);
+const latestPosts = posts.slice(0, 3);
+
+const newsletters = (await getCollection('newsletters')).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)
+);
+const latestNewsletters = newsletters.slice(0, 3);
+
+function excerpt(body: string) {
+  const text = body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.length > 140 ? `${text.slice(0, 140)}…` : text;
+}
+---
+
+<Layout title="Echoes — The Student's Panorama of TIET">
+  <section class="relative">
+    <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-paper/15 px-5 py-2.5">
+      <span class="kicker text-muted">Vol. {editions.length} &middot; Est. 2021</span>
+      <span class="kicker hidden text-muted sm:inline">Patiala, Punjab</span>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-5 py-16 md:py-24">
+      <div
+        id="hero-logo"
+        class="pointer-events-none absolute -right-20 top-4 hidden h-[20rem] w-[20rem] opacity-90 md:block lg:-right-40 lg:top-2 lg:h-[30rem] lg:w-[30rem]"
+        style="background-color: var(--color-primary); -webkit-mask-image: url(/images/brand/club-logo.png); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url(/images/brand/club-logo.png); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"
+      >
+      </div>
+
+      <h1 class="relative font-display text-7xl leading-[0.9] text-paper md:text-[8.5rem]">
+        Echoes<span class="text-primary">.</span>
+      </h1>
+      <div class="relative mt-6 max-w-md border-t-4 border-double border-paper/70"></div>
+
+      <p class="font-display relative mt-6 max-w-xl text-lg italic text-muted md:text-xl">
+        The student's panorama of TIET — magazine, bulletin, and stories from across campus.
+      </p>
+
+      <div class="relative mt-9 flex flex-wrap gap-3">
+        <a href="/editions/" class="btn btn-primary">Read the latest edition</a>
+        <a href="/blog/" class="btn btn-outline text-paper">Browse the blog</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const heroLogo = document.getElementById('hero-logo');
+    if (heroLogo) {
+      let ticking = false;
+      const rotateOnScroll = () => {
+        const angle = window.scrollY * 0.15;
+        heroLogo.style.transform = `rotate(${angle}deg)`;
+        ticking = false;
+      };
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!ticking) {
+            requestAnimationFrame(rotateOnScroll);
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
+    }
+  </script>
+
+  <section class="py-16">
+    <div class="mx-auto flex max-w-7xl items-end justify-between px-5">
+      <h2 class="font-display text-3xl text-paper md:text-4xl">
+        Editions<span class="text-primary">.</span>
+      </h2>
+      <a href="/editions/" class="btn btn-primary">Show all</a>
+    </div>
+    <div class="mx-auto mt-8 max-w-7xl px-5">
+      <EditionsCarousel editions={editions} />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl border-t border-paper/10 px-5 py-16">
+    <div class="flex items-end justify-between">
+      <h2 class="font-display text-2xl font-bold text-paper md:text-3xl">From the blog</h2>
+      <a href="/blog/" class="kicker text-accent hover:underline">View all &rarr;</a>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        latestPosts.map((post) => (
+          <Card
+            href={`/blog/${post.id}/`}
+            title={post.data.title}
+            blurb={excerpt(post.body ?? '')}
+            meta={post.data.author ? `By ${post.data.author}` : undefined}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    latestNewsletters.length > 0 && (
+      <section class="mx-auto max-w-7xl border-t border-paper/10 px-5 py-16">
+        <div class="flex items-end justify-between">
+          <h2 class="font-display text-2xl font-bold text-paper md:text-3xl">Newsletter</h2>
+          <a href="/newsletters/" class="kicker text-accent hover:underline">View all &rarr;</a>
+        </div>
+        <p class="mt-1 max-w-xl text-sm text-muted">Campus Chronicles — fest recaps and live dispatches from around TIET.</p>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {latestNewsletters.map((issue) => (
+            <Card
+              href={`/newsletters/${issue.id}/`}
+              title={issue.data.title}
+              cover={issue.data.cover}
+              coverFit="contain"
+              blurb={issue.data.blurb}
+              accent="accent"
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Layout>

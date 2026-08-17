@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('bulletin');
+  return articles.map((article) => ({ params: { slug: article.id }, props: { article } }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<Layout title={`${article.data.title} — Echoes Bulletin`}>
+  <article class="mx-auto max-w-3xl px-5 py-16">
+    <a href="/bulletin/" class="text-sm font-semibold text-accent hover:underline">&larr; Back to Bulletin</a>
+
+    <h1 class="mt-4 font-display text-4xl font-bold leading-tight text-paper md:text-5xl">{article.data.title}</h1>
+    {article.data.author && <p class="mt-3 text-sm font-semibold text-secondary">By {article.data.author}</p>}
+
+    {
+      article.data.cover && (
+        <img src={article.data.cover} alt="" class="mt-8 aspect-video w-full object-cover" />
+      )
+    }
+
+    <div class="prose-body mt-10">
+      <Content />
+    </div>
+  </article>
+</Layout>

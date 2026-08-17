@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const contactGroups = [
+  {
+    role: 'Editors in Chief',
+    people: [
+      { name: 'Harbaksh Singh Baath', phone: '+91 97791 32262', email: 'hbaath_be24@thapar.edu' },
+      { name: 'Mansimar Kaur', phone: '+91 92895 34332', email: 'mkaur5_be24@thapar.edu' },
+      { name: 'Krrish Sood', phone: '+91 98551 66777', email: 'ksood1_be24@thapar.edu' },
+    ],
+  },
+  {
+    role: 'Managing Editors',
+    people: [
+      { name: 'Bhavin Bhatti', phone: '+91 78149 41977', email: 'bbhatti_be24@thapar.edu' },
+      { name: 'Ineshvir Singh Khurana', phone: '+91 6283 763 991', email: 'ikhurana_be24@thapar.edu' },
+    ],
+  },
+  {
+    role: 'Head of Marketing',
+    people: [{ name: 'Aaveg Ojha', phone: '+91 99588 69340', email: 'aojha_be24@thapar.edu' }],
+  },
+];
+---
+
+<Layout title="Contact — Echoes" description="Get in touch with the Echoes team at TIET.">
+  <PageHero eyebrow="Contact" title="Say hello" subtitle="Reach out for collaborations, features, or just to say hi." />
+
+  <section class="mx-auto max-w-3xl px-5 py-14">
+    <div class="space-y-12">
+      {
+        contactGroups.map((group) => (
+          <div>
+            <p class="kicker text-primary">{group.role}</p>
+            <ul class="mt-3 divide-y divide-paper/10 border-t border-paper/10">
+              {group.people.map((person) => (
+                <li class="flex flex-wrap items-center justify-between gap-2 py-4">
+                  <span class="font-display text-lg text-paper">{person.name}</span>
+                  <div class="flex flex-col items-end gap-0.5">
+                    <a
+                      href={`tel:${person.phone.replace(/\s+/g, '')}`}
+                      class="text-sm font-medium text-muted transition-colors hover:text-primary"
+                    >
+                      {person.phone}
+                    </a>
+                    {person.email && (
+                      <a
+                        href={`mailto:${person.email}`}
+                        class="text-sm font-medium text-muted transition-colors hover:text-primary"
+                      >
+                        {person.email}
+                      </a>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

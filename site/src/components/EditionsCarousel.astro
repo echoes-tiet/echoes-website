@@ -1,0 +1,195 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  editions: CollectionEntry<'editions'>[];
+}
+
+const { editions } = Astro.props;
+---
+
+<div class="coverflow relative mx-auto max-w-4xl px-16">
+  <div class="coverflow-stage relative mx-auto h-[300px] cursor-grab touch-pan-y select-none active:cursor-grabbing sm:h-[380px] lg:h-[430px]">
+    {
+      editions.map((edition, i) => {
+        const isLatest = i === 0;
+        return (
+          <a
+            href={`/editions/${edition.id}/`}
+            draggable="false"
+            class="coverflow-card group absolute left-1/2 top-0 flex aspect-[16/21] w-[220px] flex-col overflow-hidden border border-black/10 bg-surface shadow-xl sm:w-[280px] lg:w-[320px]"
+            data-index={i}
+            data-number={edition.data.number}
+            data-subtitle={edition.data.subtitle ?? ''}
+          >
+            {edition.data.cover && (
+              <img
+                src={edition.data.cover}
+                alt=""
+                loading="lazy"
+                draggable="false"
+                class="h-full w-full bg-surface-2 object-contain"
+              />
+            )}
+            {isLatest && (
+              <span class="absolute left-2 top-2 whitespace-nowrap rounded-full bg-primary px-2.5 py-0.5 font-display text-[0.65rem] font-semibold text-ink">
+                Latest
+              </span>
+            )}
+          </a>
+        );
+      })
+    }
+  </div>
+
+  <button
+    type="button"
+    id="coverflow-prev"
+    class="absolute left-0 top-[150px] z-[60] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-paper/20 bg-ink text-paper shadow-md transition-transform hover:scale-110 disabled:pointer-events-none disabled:opacity-30 sm:top-[190px] lg:top-[215px]"
+    aria-label="Previous edition"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+  <button
+    type="button"
+    id="coverflow-next"
+    class="absolute right-0 top-[150px] z-[60] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-paper/20 bg-ink text-paper shadow-md transition-transform hover:scale-110 disabled:pointer-events-none disabled:opacity-30 sm:top-[190px] lg:top-[215px]"
+    aria-label="Next edition"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+
+  <div class="mt-6 text-center">
+    <p id="coverflow-eyebrow" class="kicker text-primary">Edition</p>
+    <h3 id="coverflow-title" class="font-display text-2xl text-paper">&nbsp;</h3>
+  </div>
+</div>
+
+<style>
+  .coverflow {
+    perspective: 1400px;
+  }
+  .coverflow-card img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+  .coverflow-card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+    will-change: transform, opacity;
+  }
+</style>
+
+<script>
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.coverflow-card'));
+  const eyebrow = document.getElementById('coverflow-eyebrow');
+  const title = document.getElementById('coverflow-title');
+  const prevBtn = document.getElementById('coverflow-prev');
+  const nextBtn = document.getElementById('coverflow-next');
+
+  let active = 0;
+
+  function render() {
+    cards.forEach((card, i) => {
+      const offset = i - active;
+      const abs = Math.abs(offset);
+      const tx = offset * 92;
+      const rot = Math.max(-42, Math.min(42, offset * -34));
+      const scale = Math.max(0.55, 1 - abs * 0.16);
+      const visible = abs <= 4;
+
+      card.style.transform = `translateX(-50%) translateX(${tx}px) rotateY(${rot}deg) scale(${scale})`;
+      card.style.opacity = visible ? String(Math.max(1 - abs * 0.22, 0.15)) : '0';
+      card.style.zIndex = String(50 - abs);
+      card.style.pointerEvents = visible ? 'auto' : 'none';
+    });
+
+    const activeCard = cards[active];
+    if (activeCard && eyebrow && title) {
+      eyebrow.textContent = `Edition ${activeCard.dataset.number}`;
+      title.textContent = activeCard.dataset.subtitle || '';
+    }
+
+    if (prevBtn) (prevBtn as HTMLButtonElement).disabled = active === 0;
+    if (nextBtn) (nextBtn as HTMLButtonElement).disabled = active === cards.length - 1;
+  }
+
+  function go(delta: number) {
+    active = Math.max(0, Math.min(cards.length - 1, active + delta));
+    render();
+  }
+
+  prevBtn?.addEventListener('click', () => go(-1));
+  nextBtn?.addEventListener('click', () => go(1));
+
+  cards.forEach((card, i) => {
+    card.addEventListener('click', (e) => {
+      if (i !== active) {
+        e.preventDefault();
+        active = i;
+        render();
+      }
+    });
+  });
+
+  const stage = document.querySelector<HTMLElement>('.coverflow-stage');
+
+  // Wheel / trackpad: treat one scroll gesture as one step.
+  let wheelLocked = false;
+  stage?.addEventListener(
+    'wheel',
+    (e) => {
+      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (Math.abs(delta) < 8) return;
+      e.preventDefault();
+      if (wheelLocked) return;
+      wheelLocked = true;
+      go(delta > 0 ? 1 : -1);
+      setTimeout(() => {
+        wheelLocked = false;
+      }, 380);
+    },
+    { passive: false }
+  );
+
+  // Drag / swipe (mouse + touch via Pointer Events).
+  let dragging = false;
+  let dragMoved = false;
+  let dragStartX = 0;
+
+  stage?.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    dragMoved = false;
+    dragStartX = e.clientX;
+  });
+
+  window.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    if (Math.abs(e.clientX - dragStartX) > 6) dragMoved = true;
+  });
+
+  window.addEventListener('pointerup', (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.clientX - dragStartX;
+    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+  });
+
+  // Suppress the click-through navigation when the pointerup was really a drag.
+  stage?.addEventListener(
+    'click',
+    (e) => {
+      if (dragMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    },
+    true
+  );
+
+  render();
+</script>

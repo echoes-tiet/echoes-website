@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Card from '../../components/Card.astro';
+
+const newsletters = (await getCollection('newsletters')).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)
+);
+---
+
+<Layout title="Newsletter — Echoes" description="Campus Chronicles: the Echoes newsletter, covering fests and events at TIET.">
+  <PageHero eyebrow="Newsletter" title="Campus Chronicles" subtitle="Fest recaps, live coverage, and campus dispatches." />
+
+  <section class="mx-auto max-w-7xl px-5 py-14">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        newsletters.map((issue) => (
+          <Card
+            href={`/newsletters/${issue.id}/`}
+            title={issue.data.title}
+            cover={issue.data.cover}
+            coverFit="contain"
+            blurb={issue.data.blurb}
+            accent="accent"
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
