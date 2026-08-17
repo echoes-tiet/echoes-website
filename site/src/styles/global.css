@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm paper palette: cream ground, olive + berry as the only two hues. */
+  --color-ink: #fbf3e6;
+  --color-surface: #f3e8d3;
+  --color-surface-2: #ebddbe;
+  --color-paper: #29241c;
+  --color-muted: #7c7364;
+
+  --color-primary: #b8456a;
+  --color-primary-dim: #8f3654;
+  --color-secondary: #7d8c52;
+  --color-accent: #9c3a5c;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.kicker {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.rule {
+  border-color: var(--color-paper);
+  opacity: 0.15;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  border-radius: 0.25rem;
+  padding: 0.7em 1.4em;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-paper);
+}
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.prose-body :where(p) {
+  margin-bottom: 1.1em;
+  line-height: 1.75;
+  color: var(--color-paper);
+}
+
+.prose-body :where(b, strong) {
+  color: var(--color-secondary);
+}
+
+.prose-body :where(a) {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-body :where(h1, h2, h3) {
+  font-family: var(--font-display);
+  color: var(--color-secondary);
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+
+.prose-body :where(em) {
+  color: var(--color-accent);
+}

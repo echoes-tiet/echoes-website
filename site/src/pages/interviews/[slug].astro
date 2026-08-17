@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const interviews = await getCollection('interviews');
+  return interviews.map((interview) => ({ params: { slug: interview.id }, props: { interview } }));
+}
+
+const { interview } = Astro.props;
+const { Content } = await render(interview);
+---
+
+<Layout title={`${interview.data.title} — Echoes Interviews`}>
+  <article class="mx-auto max-w-4xl px-5 py-16">
+    <a href="/interviews/" class="text-sm font-semibold text-accent hover:underline">&larr; All interviews</a>
+
+    <h1 class="mt-4 font-display text-3xl font-bold leading-tight text-paper md:text-4xl">{interview.data.title}</h1>
+
+    <div class="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
+      {
+        interview.data.photo && (
+          <img
+            src={interview.data.photo}
+            alt=""
+            class="aspect-[4/5] w-full border border-black/10 object-cover"
+          />
+        )
+      }
+      <div class="prose-body">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Layout>

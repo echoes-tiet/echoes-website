@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Cascade Registration — Echoes" description="Individual registration for Cascade, an Echoes event.">
+  <section
+    class="bg-cover bg-center px-5 py-20"
+    style="background-image: linear-gradient(rgba(14,11,20,0.85), rgba(14,11,20,0.85)), url('/images/brand/background.png');"
+  >
+    <div class="mx-auto max-w-lg border border-paper/15 bg-surface p-8">
+      <img src="/images/brand/cascade-name.png" alt="Cascade" class="mx-auto mb-6 w-full max-w-xs" />
+
+      <form name="Cascade" action="post" class="space-y-5">
+        <div>
+          <label for="name" class="mb-1 block text-sm font-medium text-muted">Name</label>
+          <input type="text" name="Name" id="name" required class="w-full border border-black/15 bg-surface-2 px-4 py-2.5 text-paper focus:border-primary focus:outline-none" />
+        </div>
+        <div>
+          <label for="rollno" class="mb-1 block text-sm font-medium text-muted">Roll Number</label>
+          <input type="number" name="RollNumber" id="rollno" required class="w-full border border-black/15 bg-surface-2 px-4 py-2.5 text-paper focus:border-primary focus:outline-none" />
+        </div>
+        <div>
+          <label for="phone" class="mb-1 block text-sm font-medium text-muted">Phone Number</label>
+          <input type="number" name="PhoneNumber" id="phone" required class="w-full border border-black/15 bg-surface-2 px-4 py-2.5 text-paper focus:border-primary focus:outline-none" />
+        </div>
+        <div>
+          <label for="year" class="mb-1 block text-sm font-medium text-muted">Year</label>
+          <input type="number" name="Year" id="year" required class="w-full border border-black/15 bg-surface-2 px-4 py-2.5 text-paper focus:border-primary focus:outline-none" />
+        </div>
+        <div>
+          <label for="branch" class="mb-1 block text-sm font-medium text-muted">Branch</label>
+          <input type="text" name="Branch" id="branch" required class="w-full border border-black/15 bg-surface-2 px-4 py-2.5 text-paper focus:border-primary focus:outline-none" />
+        </div>
+
+        <fieldset class="space-y-2">
+          <legend class="mb-1 text-sm font-medium text-muted">Events</legend>
+          <label class="flex items-center gap-2 text-sm text-paper">
+            <input type="checkbox" name="childHood" value="1" id="replay" class="accent-primary" />
+            Childhood Replay
+          </label>
+          <label class="flex items-center gap-2 text-sm text-paper">
+            <input type="checkbox" name="NewsRoom" value="1" id="nexus" class="accent-primary" />
+            Newsroom Nexus
+          </label>
+          <label class="flex items-center gap-2 text-sm text-paper">
+            <input type="checkbox" name="TriviaNight" value="1" id="night" class="accent-primary" />
+            Trivia Night
+          </label>
+        </fieldset>
+
+        <button
+          type="submit"
+          class="btn btn-primary w-full"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script is:inline>
+    function checkNexus() {
+      if (
+        document.getElementById('name').value === '' ||
+        document.getElementById('rollno').value === '' ||
+        document.getElementById('year').value === '' ||
+        document.getElementById('branch').value === ''
+      ) {
+        alert('Please fill all the fields');
+      } else if (
+        !document.getElementById('replay').checked &&
+        !document.getElementById('nexus').checked &&
+        !document.getElementById('night').checked
+      ) {
+        alert('Please select atleast one event');
+      } else if (document.getElementById('nexus').checked) {
+        alert('Your form has been submitted. Redirecting you to a Team Registration page');
+        window.location.href = '/team-registration/';
+      }
+    }
+
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbz3gC3Vt3IhSYG4wMQ3YodS_nwHRYM0nsBvyzIBB43hG9KRait9EUX33vHxoX_3Bldi/exec';
+    const form = document.forms['Cascade'];
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(() => checkNexus())
+        .then(() => window.location.reload())
+        .catch((error) => console.error('Error!', error.message));
+    });
+  </script>
+</Layout>

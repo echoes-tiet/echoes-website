@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Card from '../../components/Card.astro';
+
+const articles = (await getCollection('bulletin')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+function excerpt(body: string) {
+  const text = body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.length > 140 ? `${text.slice(0, 140)}…` : text;
+}
+---
+
+<Layout title="Bulletin — Echoes" description="Campus news, current affairs, and quick reads from the Echoes bulletin.">
+  <PageHero eyebrow="Bulletin" title="What's happening, in brief" subtitle="News, current affairs, and quick reads from the Echoes desk." />
+
+  <section class="mx-auto max-w-7xl px-5 py-14">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        articles.map((article) => (
+          <Card
+            href={`/bulletin/${article.id}/`}
+            title={article.data.title}
+            cover={article.data.cover}
+            blurb={excerpt(article.body ?? '')}
+            meta={article.data.author ? `By ${article.data.author}` : undefined}
+            accent="secondary"
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

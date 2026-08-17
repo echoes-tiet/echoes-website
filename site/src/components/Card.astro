@@ -1,0 +1,37 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  cover?: string;
+  blurb?: string;
+  meta?: string;
+  accent?: 'primary' | 'secondary' | 'accent';
+  coverFit?: 'cover' | 'contain';
+}
+
+const { href, title, cover, blurb, meta, coverFit = 'cover' } = Astro.props;
+---
+
+<a href={href} class="group flex h-full flex-col border-t-2 border-paper/80 pt-4 transition-colors hover:border-primary">
+  {
+    cover && coverFit === 'contain' && (
+      <div class="mb-4 flex w-full justify-center bg-surface-2 p-4">
+        <img src={cover} alt="" loading="lazy" class="max-h-72 w-auto object-contain" />
+      </div>
+    )
+  }
+  {
+    cover && coverFit === 'cover' && (
+      <div class="mb-4 aspect-[16/10] w-full overflow-hidden bg-surface-2">
+        <img src={cover} alt="" loading="lazy" class="h-full w-full object-cover" />
+      </div>
+    )
+  }
+  <div class="flex flex-1 flex-col gap-2">
+    {meta && <p class="kicker text-muted">{meta}</p>}
+    <h3 class="font-display text-lg font-semibold leading-snug text-paper decoration-primary underline-offset-4 group-hover:underline">
+      {title}
+    </h3>
+    {blurb && <p class="line-clamp-3 text-sm text-muted">{blurb}</p>}
+  </div>
+</a>

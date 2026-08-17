@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Card from '../../components/Card.astro';
+
+const interviews = await getCollection('interviews');
+---
+
+<Layout title="Interviews — Echoes" description="Conversations with alumni, faculty, and industry leaders, by Echoes.">
+  <PageHero eyebrow="Interviews" title="Conversations worth having" subtitle="Alumni, faculty, and industry leaders in their own words." />
+
+  <section class="mx-auto max-w-7xl px-5 py-14">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        interviews.map((interview) => (
+          <Card
+            href={`/interviews/${interview.id}/`}
+            title={interview.data.title}
+            cover={interview.data.photo}
+            accent="primary"
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
