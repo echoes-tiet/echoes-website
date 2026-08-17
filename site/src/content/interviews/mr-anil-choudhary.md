@@ -4,21 +4,21 @@ photo: "/images/interviews/anil-choudhary.jpeg"
 ---
 
 <div class="col-lg-6 pt-4 pt-lg-0" style="color: rgba(210, 241, 219, 1);">
-            <p class="fst-italic">
-              Echoes Club interviewed Mr Anil Choudhary, an alumnus from the 1982 batch who is currently working as Country Head and Managing Director of Schneider Electric (India). Mr Choudhary has more than 39 years of working experience in the industry. He is a determined and focused individual who strives to be the best even after achieving such heights.</p>
-            <br><br>
-            </div>
+<p class="fst-italic">
+Echoes Club interviewed Mr Anil Choudhary, an alumnus from the 1982 batch who is currently working as Country Head and Managing Director of Schneider Electric (India). Mr Choudhary has more than 39 years of working experience in the industry. He is a determined and focused individual who strives to be the best even after achieving such heights.</p>
+<br><br>
+</div>
             
-            <p style="color: rgba(210, 241, 219, 1);"><br><b>Q. The COVID-19 pandemic has affected educational systems worldwide, leading to the near-total closures of schools, universities and colleges. How do you think it has affected college life?</b><br>
+<p style="color: rgba(210, 241, 219, 1);"><br><b>Q. The COVID-19 pandemic has affected educational systems worldwide, leading to the near-total closures of schools, universities and colleges. How do you think it has affected college life?</b><br>
 
-            <br>COVID-19 brought many challenges to the world as well as the education system. But this could be seen in a positive light as digitalization accelerated during this period. Certain things, including classroom learning, experiences of hostel life, and all the co-curricular activities that cannot be substituted, would negatively impact the overall development of students.
+<br>COVID-19 brought many challenges to the world as well as the education system. But this could be seen in a positive light as digitalization accelerated during this period. Certain things, including classroom learning, experiences of hostel life, and all the co-curricular activities that cannot be substituted, would negatively impact the overall development of students.
 
-            <br>This scenario might also be an advantage as it taught us how to face challenges and grab various opportunities while adapting to immediate changes, which are helpful in the corporate world. People also saw technological advancement and made themselves adhere to it in minimum time.
+<br>This scenario might also be an advantage as it taught us how to face challenges and grab various opportunities while adapting to immediate changes, which are helpful in the corporate world. People also saw technological advancement and made themselves adhere to it in minimum time.
 
             
-            <br><br>
-           <b style="color: rgba(255, 229, 229, 1);">
-            Q. Holding the vital position of Country President and MD for Schneider Electric India requires you to show a great sense of responsibility and diligence. What are some of the principles that one should follow to achieve extraordinary things in life?</b>
+<br><br>
+<b style="color: rgba(255, 229, 229, 1);">
+Q. Holding the vital position of Country President and MD for Schneider Electric India requires you to show a great sense of responsibility and diligence. What are some of the principles that one should follow to achieve extraordinary things in life?</b>
 <br><br>
 Everyone needs to follow their passion and work with great focus on their goal, irrespective of your work domain, leading to success. Expansion of vision along with time also plays a vital role. It is also essential for every individual to invest in personal and professional development.
 
@@ -60,4 +60,4 @@ Classroom learning plays a vital role in every scenario. Technology nowadays all
 
 
 
-    </p>
+</p>

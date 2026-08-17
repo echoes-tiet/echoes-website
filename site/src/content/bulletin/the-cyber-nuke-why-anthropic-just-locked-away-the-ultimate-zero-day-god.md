@@ -66,12 +66,12 @@ For <strong>emerging engineers and cybersecurity enthusiasts</strong> at Thapar,
 
 
 
-            <p>
-              <i>Source: <a href="http://www.anthropic.com" style="color:rgba(127, 170, 139, 1)" target="_blank">anthropic.com</a>,
-                <a href="http://www.theguardian.com" style="color:rgba(127, 170, 139, 1)" target="_blank">theguardian.com</a>
+<p>
+<i>Source: <a href="http://www.anthropic.com" style="color:rgba(127, 170, 139, 1)" target="_blank">anthropic.com</a>,
+<a href="http://www.theguardian.com" style="color:rgba(127, 170, 139, 1)" target="_blank">theguardian.com</a>
 
 
 
 
-              </i>
-            </p>
+</i>
+</p>
