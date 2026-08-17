@@ -41,7 +41,7 @@ const socialIcon: Record<string, string> = {
               <div
                 class:list={[
                   'border-t-2 border-paper/80 pt-3 text-center',
-                  bySection[section].length < 4 && 'w-56',
+                  bySection[section].length < 4 && 'w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]',
                 ]}
               >
                 {member.data.photo ? (
