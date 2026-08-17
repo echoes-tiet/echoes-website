@@ -65,10 +65,10 @@ While the full commissioning is slated for <strong>September 2026</strong>, this
 
 
 
-            <p>
-              <i>Sources: <a href="https://www.hindustantimes.com/" style="color:rgba(127, 170, 139, 1)" target="_blank">hindustantimes.com</a>,
-                  <a href="https://www.pib.gov.in/" style="color:rgba(127, 170, 139, 1)" target="_blank">pib.gov.in</a>
+<p>
+<i>Sources: <a href="https://www.hindustantimes.com/" style="color:rgba(127, 170, 139, 1)" target="_blank">hindustantimes.com</a>,
+<a href="https://www.pib.gov.in/" style="color:rgba(127, 170, 139, 1)" target="_blank">pib.gov.in</a>
 
 
-              </i>
-            </p>
+</i>
+</p>
