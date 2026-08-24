@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import EditionsCarousel from '../components/EditionsCarousel.astro';
+import BlogScrollCards from '../components/BlogScrollCards.astro';
 import { parseDateLabel } from '../lib/dates';
 
 const editions = (await getCollection('editions')).sort((a, b) => b.data.number - a.data.number);
@@ -93,18 +94,14 @@ function excerpt(body: string) {
       <h2 class="font-display text-2xl font-bold text-paper md:text-3xl">From the blog</h2>
       <a href="/blog/" class="kicker text-accent hover:underline">View all &rarr;</a>
     </div>
-    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        latestPosts.map((post) => (
-          <Card
-            href={`/blog/${post.id}/`}
-            title={post.data.title}
-            blurb={excerpt(post.body ?? '')}
-            meta={post.data.author ? `By ${post.data.author}` : undefined}
-          />
-        ))
-      }
-    </div>
+    <BlogScrollCards
+      posts={latestPosts.map((post) => ({
+        href: `/blog/${post.id}/`,
+        title: post.data.title,
+        author: post.data.author,
+        excerpt: excerpt(post.body ?? ''),
+      }))}
+    />
   </section>
 
   {
