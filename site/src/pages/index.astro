@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import EditionsCarousel from '../components/EditionsCarousel.astro';
 import BlogScrollCards from '../components/BlogScrollCards.astro';
+import RecruitmentPopup from '../components/RecruitmentPopup.astro';
 import { parseDateLabel } from '../lib/dates';
 
 const editions = (await getCollection('editions')).sort((a, b) => b.data.number - a.data.number);
@@ -25,6 +26,8 @@ function excerpt(body: string) {
 ---
 
 <Layout title="Echoes — The Student's Panorama of TIET">
+  <RecruitmentPopup />
+
   <section class="relative">
     <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-paper/15 px-5 py-2.5">
       <span class="kicker text-muted">Vol. {editions.length} &middot; Est. 2021</span>
