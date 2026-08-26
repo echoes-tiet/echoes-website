@@ -1,0 +1,92 @@
+---
+---
+
+<div id="recruitment-popup" class="recruitment-popup fixed inset-0 z-[200] hidden items-center justify-center p-5">
+  <div class="recruitment-backdrop absolute inset-0 bg-black/60"></div>
+
+  <div class="recruitment-card relative w-full max-w-sm bg-ink p-8 text-center shadow-2xl sm:p-10">
+    <div class="absolute inset-x-0 top-0 h-2 bg-primary"></div>
+
+    <button
+      id="recruitment-close"
+      type="button"
+      aria-label="Close"
+      class="absolute right-4 top-5 text-2xl leading-none text-muted transition-colors hover:text-primary"
+    >
+      &times;
+    </button>
+
+    <p class="kicker text-primary">Echoes</p>
+    <h2 class="mt-3 font-display text-3xl text-paper sm:text-4xl">Recruitments are open.</h2>
+    <div class="mx-auto mt-5 max-w-[10rem] border-t-4 border-double border-paper/70"></div>
+    <p class="mx-auto mt-5 max-w-xs text-muted">
+      Be a part of this amazing club — learn all about journalism, coverage, and much more.
+    </p>
+
+    <a href="/register/" id="recruitment-cta" class="btn btn-primary mt-8 inline-flex">Register Now</a>
+  </div>
+</div>
+
+<style>
+  .recruitment-card {
+    opacity: 0;
+    transform: scale(0.92) rotate(-3deg);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .recruitment-popup.is-open .recruitment-card {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  .recruitment-backdrop {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .recruitment-popup.is-open .recruitment-backdrop {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .recruitment-card,
+    .recruitment-backdrop {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = 'echoes-recruitment-popup-dismissed';
+  const popup = document.getElementById('recruitment-popup');
+  const closeBtn = document.getElementById('recruitment-close');
+  const backdrop = popup?.querySelector('.recruitment-backdrop');
+  const cta = document.getElementById('recruitment-cta');
+
+  function open() {
+    if (!popup) return;
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+    requestAnimationFrame(() => popup.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    if (!popup) return;
+    popup.classList.remove('is-open');
+    document.body.style.overflow = '';
+    sessionStorage.setItem(STORAGE_KEY, '1');
+    setTimeout(() => {
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+    }, 400);
+  }
+
+  if (popup && !sessionStorage.getItem(STORAGE_KEY)) {
+    setTimeout(open, 1200);
+  }
+
+  closeBtn?.addEventListener('click', close);
+  backdrop?.addEventListener('click', close);
+  cta?.addEventListener('click', () => sessionStorage.setItem(STORAGE_KEY, '1'));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup?.classList.contains('is-open')) close();
+  });
+</script>
