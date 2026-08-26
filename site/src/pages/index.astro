@@ -4,7 +4,6 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import EditionsCarousel from '../components/EditionsCarousel.astro';
 import BlogScrollCards from '../components/BlogScrollCards.astro';
-import RecruitmentPopup from '../components/RecruitmentPopup.astro';
 import { parseDateLabel } from '../lib/dates';
 
 const editions = (await getCollection('editions')).sort((a, b) => b.data.number - a.data.number);
@@ -26,8 +25,6 @@ function excerpt(body: string) {
 ---
 
 <Layout title="Echoes — The Student's Panorama of TIET">
-  <RecruitmentPopup />
-
   <section class="relative">
     <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-paper/15 px-5 py-2.5">
       <span class="kicker text-muted">Vol. {editions.length} &middot; Est. 2021</span>
@@ -45,6 +42,19 @@ function excerpt(body: string) {
       <h1 class="relative font-display text-7xl leading-[0.9] text-paper md:text-[8.5rem]">
         Echoes<span class="text-primary">.</span>
       </h1>
+
+      <a
+        href="/register/"
+        class="relative mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-ink transition-transform hover:scale-105"
+      >
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-ink opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-ink"></span>
+        </span>
+        Recruitments are open
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+
       <div class="relative mt-6 max-w-md border-t-4 border-double border-paper/70"></div>
 
       <p class="font-display relative mt-6 max-w-xl text-lg italic text-muted md:text-xl">
