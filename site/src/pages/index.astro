@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import EditionsCarousel from '../components/EditionsCarousel.astro';
 import BlogScrollCards from '../components/BlogScrollCards.astro';
+import NewsletterScrollCards from '../components/NewsletterScrollCards.astro';
 import { parseDateLabel } from '../lib/dates';
 
 const editions = (await getCollection('editions')).sort((a, b) => b.data.number - a.data.number);
@@ -125,18 +125,14 @@ function excerpt(body: string) {
           <a href="/newsletters/" class="kicker text-accent hover:underline">View all &rarr;</a>
         </div>
         <p class="mt-1 max-w-xl text-sm text-muted">Campus Chronicles — fest recaps and live dispatches from around TIET.</p>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {latestNewsletters.map((issue) => (
-            <Card
-              href={`/newsletters/${issue.id}/`}
-              title={issue.data.title}
-              cover={issue.data.cover}
-              coverFit="contain"
-              blurb={issue.data.blurb}
-              accent="accent"
-            />
-          ))}
-        </div>
+        <NewsletterScrollCards
+          issues={latestNewsletters.map((issue) => ({
+            href: `/newsletters/${issue.id}/`,
+            title: issue.data.title,
+            blurb: issue.data.blurb,
+            cover: issue.data.cover,
+          }))}
+        />
       </section>
     )
   }
