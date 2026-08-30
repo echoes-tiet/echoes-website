@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
-import Card from '../../components/Card.astro';
+import EditionsFlowGrid from '../../components/EditionsFlowGrid.astro';
 
 const editions = (await getCollection('editions')).sort((a, b) => b.data.number - a.data.number);
 ---
@@ -11,19 +11,14 @@ const editions = (await getCollection('editions')).sort((a, b) => b.data.number 
   <PageHero eyebrow="Editions" title="The Echoes magazine, issue by issue" subtitle="Our full-length editions, cover to cover." />
 
   <section class="mx-auto max-w-7xl px-5 py-14">
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        editions.map((edition) => (
-          <Card
-            href={`/editions/${edition.id}/`}
-            title={`Edition ${edition.data.number}${edition.data.subtitle ? ` — ${edition.data.subtitle}` : ''}`}
-            cover={edition.data.cover}
-            coverFit="contain"
-            blurb={edition.data.blurb}
-            accent="secondary"
-          />
-        ))
-      }
-    </div>
+    <EditionsFlowGrid
+      editions={editions.map((edition) => ({
+        href: `/editions/${edition.id}/`,
+        number: edition.data.number,
+        title: edition.data.subtitle ?? `Edition ${edition.data.number}`,
+        cover: edition.data.cover,
+        blurb: edition.data.blurb,
+      }))}
+    />
   </section>
 </Layout>

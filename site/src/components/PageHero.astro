@@ -6,12 +6,122 @@ interface Props {
 }
 
 const { eyebrow, title, subtitle } = Astro.props;
+
+// Split server-side so the DOM always holds the real, readable text.
+// Nothing to revert for assistive tech, and the reveal is pure CSS — so it
+// still plays (and the copy is still present) with JS disabled.
+const words = title.split(' ');
 ---
 
-<section class="border-b border-paper/15">
+<section class="page-hero border-b border-paper/15">
   <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
-    {eyebrow && <p class="kicker text-primary">{eyebrow}</p>}
-    <h1 class="mt-3 max-w-3xl font-display text-4xl leading-tight text-paper md:text-6xl">{title}</h1>
-    {subtitle && <p class="font-display mt-5 max-w-2xl text-lg italic text-muted">{subtitle}</p>}
+    {eyebrow && <p class="hero-eyebrow kicker text-primary">{eyebrow}</p>}
+
+    <h1 class="hero-title mt-3 max-w-3xl font-display text-4xl leading-tight text-paper md:text-6xl">
+      {
+        words.map((word, i) => (
+          <>
+            <span class="hero-word" style={`--w: ${i};`}>
+              <span class="hero-word-inner">{word}</span>
+            </span>
+            {' '}
+          </>
+        ))
+      }
+    </h1>
+
+    <span class="hero-rule" aria-hidden="true"></span>
+
+    {subtitle && <p class="hero-subtitle font-display mt-5 max-w-2xl text-lg italic text-muted">{subtitle}</p>}
   </div>
 </section>
+
+<style>
+  /* Each word is its own mask, so the reveal reflows correctly at any width
+     instead of depending on measured line boxes. */
+  .hero-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    /* Room for descenders (the 'g' in "magazine") so the mask can't clip them. */
+    padding-bottom: 0.18em;
+    margin-bottom: -0.18em;
+  }
+
+  .hero-word-inner {
+    display: inline-block;
+    transform: translateY(105%);
+    animation: hero-rise 0.72s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(120ms + var(--w) * 65ms);
+  }
+
+  @keyframes hero-rise {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .hero-eyebrow {
+    opacity: 0;
+    animation: hero-fade 0.5s ease forwards;
+  }
+
+  /* A rule that draws itself out from the left, after the words land. */
+  .hero-rule {
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 1.75rem;
+    background-color: var(--color-primary);
+    animation: hero-draw 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 420ms;
+  }
+
+  .hero-subtitle {
+    opacity: 0;
+    animation: hero-fade-up 0.6s ease forwards;
+    animation-delay: 560ms;
+  }
+
+  @keyframes hero-fade {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes hero-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-draw {
+    to {
+      width: 4.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-word-inner,
+    .hero-eyebrow,
+    .hero-rule,
+    .hero-subtitle {
+      animation: none;
+    }
+    .hero-word-inner {
+      transform: none;
+    }
+    .hero-eyebrow,
+    .hero-subtitle {
+      opacity: 1;
+    }
+    .hero-rule {
+      width: 4.5rem;
+    }
+  }
+</style>
