@@ -3,9 +3,10 @@ interface Props {
   eyebrow?: string;
   title: string;
   subtitle?: string;
+  interactiveTitle?: boolean;
 }
 
-const { eyebrow, title, subtitle } = Astro.props;
+const { eyebrow, title, subtitle, interactiveTitle = false } = Astro.props;
 
 // Split server-side so the DOM always holds the real, readable text.
 // Nothing to revert for assistive tech, and the reveal is pure CSS — so it
@@ -17,7 +18,9 @@ const words = title.split(' ');
   <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
     {eyebrow && <p class="hero-eyebrow kicker text-primary">{eyebrow}</p>}
 
-    <h1 class="hero-title mt-3 max-w-3xl font-display text-4xl leading-tight text-paper md:text-6xl">
+    <h1
+      class:list={['hero-title mt-3 max-w-3xl font-display text-4xl leading-tight text-paper md:text-6xl', interactiveTitle && 'hero-title--interactive']}
+    >
       {
         words.map((word, i) => (
           <>
@@ -64,6 +67,42 @@ const words = title.split(' ');
   .hero-eyebrow {
     opacity: 0;
     animation: hero-fade 0.5s ease forwards;
+  }
+
+  /* Opt-in: each word underlines and lifts on hover. Uses the `translate`
+     property (not `transform`) so it doesn't fight the entrance animation,
+     which already owns `transform` on this element. */
+  .hero-title--interactive .hero-word {
+    cursor: default;
+    transition: color 0.35s ease;
+  }
+
+  .hero-title--interactive .hero-word-inner {
+    position: relative;
+    transition: translate 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-title--interactive .hero-word-inner::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 0.08em;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-title--interactive .hero-word:hover {
+    color: var(--color-primary);
+  }
+
+  .hero-title--interactive .hero-word:hover .hero-word-inner {
+    translate: 0 -0.06em;
+  }
+
+  .hero-title--interactive .hero-word:hover .hero-word-inner::after {
+    right: 0;
   }
 
   /* A rule that draws itself out from the left, after the words land. */
@@ -122,6 +161,12 @@ const words = title.split(' ');
     }
     .hero-rule {
       width: 4.5rem;
+    }
+    .hero-title--interactive .hero-word-inner {
+      transition: color 0.2s ease;
+    }
+    .hero-title--interactive .hero-word:hover .hero-word-inner {
+      translate: none;
     }
   }
 </style>
