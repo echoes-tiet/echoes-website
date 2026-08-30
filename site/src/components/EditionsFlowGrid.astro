@@ -1,0 +1,397 @@
+---
+interface Edition {
+  href: string;
+  number: number;
+  title: string;
+  cover?: string;
+  blurb?: string;
+}
+
+interface Props {
+  editions: Edition[];
+}
+
+const { editions } = Astro.props;
+---
+
+<div class="editions-flow">
+  {
+    editions.map((edition, i) => {
+      const flipped = i % 2 === 1;
+      return (
+        <a
+          href={edition.href}
+          class:list={['edition-entry group', flipped && 'is-flipped']}
+          style={`--i: ${i}; --dir: ${flipped ? -1 : 1};`}
+        >
+          <span class="edition-ghost" aria-hidden="true">
+            {String(edition.number).padStart(2, '0')}
+          </span>
+
+          <div class="edition-cover">
+            <div class="cover-stage">
+              <div class="cover-plate">
+                {edition.cover && (
+                  <img src={edition.cover} alt="" loading="lazy" class="w-full object-contain" />
+                )}
+                {/* Stacked paper edges — only ever seen when the plate rotates in 3D. */}
+                <span class="cover-spine" aria-hidden="true"></span>
+                {/* Specular sheen that tracks the pointer, like light on glossy stock. */}
+                <span class="cover-glare" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="edition-text">
+            <span class="kicker text-primary">Edition {edition.number}</span>
+            <h3 class="mt-3 font-display text-4xl leading-[1.05] text-paper md:text-5xl">{edition.title}</h3>
+            <span class="edition-rule" aria-hidden="true"></span>
+            {edition.blurb && <p class="edition-blurb">{edition.blurb}</p>}
+            <span class="edition-cta">
+              Read this edition
+              <span class="edition-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+      );
+    })
+  }
+</div>
+
+<style>
+  .editions-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  @media (min-width: 768px) {
+    .editions-flow {
+      gap: 9rem;
+    }
+  }
+
+  .edition-entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--i) * 60ms);
+    will-change: opacity, transform;
+  }
+
+  .edition-entry.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 768px) {
+    .edition-entry {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0;
+    }
+    /* Asymmetric: cover 5 cols, text 6 cols, 1 col of air between. */
+    .edition-cover {
+      grid-column: 1 / span 5;
+    }
+    .edition-text {
+      grid-column: 7 / span 6;
+    }
+    .edition-entry.is-flipped .edition-cover {
+      grid-column: 8 / span 5;
+      grid-row: 1;
+    }
+    .edition-entry.is-flipped .edition-text {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
+  }
+
+  /* Oversized ghost numeral — print-style editorial flourish, purely decorative. */
+  .edition-ghost {
+    position: absolute;
+    top: -3.5rem;
+    left: -1rem;
+    z-index: 0;
+    font-family: var(--font-display);
+    font-size: clamp(7rem, 18vw, 16rem);
+    line-height: 1;
+    color: var(--color-paper);
+    opacity: 0.05;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .edition-entry.is-flipped .edition-ghost {
+    left: auto;
+    right: -1rem;
+  }
+
+  .edition-cover {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Perspective lives on the stage so the plate inside can rotate in real 3D. */
+  .cover-stage {
+    perspective: 1100px;
+  }
+
+  .cover-plate {
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* Shadow sits on the artwork itself, not on a container box. */
+  .edition-cover img {
+    max-height: 30rem;
+    margin-inline: auto;
+    filter: drop-shadow(0 18px 30px rgba(41, 36, 28, 0.22));
+    transition: filter 0.6s ease;
+  }
+
+  /* The binding: a slab standing perpendicular to the cover, hinged on its left edge. */
+  .cover-spine {
+    position: absolute;
+    inset-block: 2%;
+    left: 0;
+    width: 14px;
+    transform-origin: left center;
+    transform: rotateY(-90deg);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(41, 36, 28, 0.42) 0px,
+      rgba(41, 36, 28, 0.42) 1px,
+      rgba(244, 238, 226, 0.85) 1px,
+      rgba(244, 238, 226, 0.85) 3px
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  .edition-entry.is-tilting .cover-spine {
+    opacity: 1;
+  }
+
+  .cover-glare {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle at var(--gx, 50%) var(--gy, 50%),
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.14) 30%,
+      rgba(255, 255, 255, 0) 65%
+    );
+    /* `screen` only ever lightens — behaves like a real specular highlight. */
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .edition-entry.is-tilting .cover-glare {
+    opacity: 1;
+  }
+
+  .edition-entry:hover .edition-cover {
+    transform: translateY(-10px) scale(1.02);
+  }
+
+  .edition-entry:hover .edition-cover img {
+    filter: drop-shadow(0 28px 44px rgba(41, 36, 28, 0.3));
+  }
+
+  .edition-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Rule grows outward on hover — the "flow" cue between cover and copy. */
+  .edition-rule {
+    display: block;
+    width: 3.5rem;
+    height: 2px;
+    margin-top: 1.5rem;
+    background-color: var(--color-primary);
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .edition-entry:hover .edition-rule {
+    width: 7rem;
+  }
+
+  .edition-blurb {
+    margin-top: 1.5rem;
+    max-width: 34rem;
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  .edition-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+  }
+
+  .edition-arrow {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .edition-entry:hover .edition-arrow {
+    transform: translateX(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .edition-entry {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .edition-cover,
+    .edition-cover img,
+    .edition-rule,
+    .edition-arrow {
+      transition: none;
+    }
+    .edition-entry:hover .edition-cover {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  const entries = Array.from(document.querySelectorAll<HTMLElement>('.edition-entry'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion) {
+    entries.forEach((el) => el.classList.add('is-visible'));
+  } else {
+    const observer = new IntersectionObserver(
+      (obsEntries) => {
+        obsEntries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    entries.forEach((el) => observer.observe(el));
+
+    // Cover drifts slower than its copy — editorial parallax, alternating by side.
+    const covers = entries.map((el) => el.querySelector<HTMLElement>('.edition-cover'));
+    let ticking = false;
+
+    const updateParallax = () => {
+      const mid = window.innerHeight / 2;
+      entries.forEach((el, i) => {
+        const cover = covers[i];
+        if (!cover || !el.classList.contains('is-visible')) return;
+        const rect = el.getBoundingClientRect();
+        // Skip offscreen work (pattern guidance: pause scroll animation when offscreen).
+        if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
+        const distance = (rect.top + rect.height / 2 - mid) / mid;
+        const dir = Number(getComputedStyle(el).getPropertyValue('--dir')) || 1;
+        // Independent `translate` composes with the hover `transform` instead of fighting it.
+        cover.style.translate = `${(distance * 6 * dir).toFixed(1)}px ${(-distance * 18).toFixed(1)}px`;
+      });
+      ticking = false;
+    };
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+    updateParallax();
+  }
+
+  // --- Cursor-tracked 3D tilt -------------------------------------------------
+  // Enhancement only: the whole entry is a link, so tap/keyboard reach it without this.
+  // Gated on a real hover-capable pointer so touch devices never get a stuck tilt.
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (!reduceMotion && finePointer) {
+    const MAX_DEG = 11; // clamped so the plate never tears out of its own hit box
+    const EASE = 0.12;
+
+    entries.forEach((entry) => {
+      const wrap = entry.querySelector<HTMLElement>('.edition-cover');
+      const plate = entry.querySelector<HTMLElement>('.cover-plate');
+      const glare = entry.querySelector<HTMLElement>('.cover-glare');
+      if (!wrap || !plate) return;
+
+      let tRX = 0, tRY = 0, cRX = 0, cRY = 0;
+      let tGX = 50, tGY = 50, cGX = 50, cGY = 50;
+      let raf: number | null = null;
+      let active = false;
+
+      // Stable named handlers, so they could be detached with the same reference.
+      const onMove = (e: PointerEvent) => {
+        const r = wrap.getBoundingClientRect();
+        const px = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
+        const py = Math.min(Math.max((e.clientY - r.top) / r.height, 0), 1);
+        tRY = (px - 0.5) * 2 * MAX_DEG;
+        tRX = -(py - 0.5) * 2 * MAX_DEG;
+        tGX = px * 100;
+        tGY = py * 100;
+      };
+
+      const tick = () => {
+        cRX += (tRX - cRX) * EASE;
+        cRY += (tRY - cRY) * EASE;
+        cGX += (tGX - cGX) * EASE;
+        cGY += (tGY - cGY) * EASE;
+
+        plate.style.transform = `rotateX(${cRX.toFixed(2)}deg) rotateY(${cRY.toFixed(2)}deg)`;
+        glare?.style.setProperty('--gx', `${cGX.toFixed(1)}%`);
+        glare?.style.setProperty('--gy', `${cGY.toFixed(1)}%`);
+
+        const settled = Math.abs(tRX - cRX) < 0.02 && Math.abs(tRY - cRY) < 0.02;
+        if (active || !settled) {
+          raf = requestAnimationFrame(tick);
+        } else {
+          // Fully rested: hand the element back to CSS rather than pinning an inline 0deg.
+          raf = null;
+          plate.style.transform = '';
+        }
+      };
+
+      const onEnter = () => {
+        active = true;
+        entry.classList.add('is-tilting');
+        if (raf === null) raf = requestAnimationFrame(tick);
+      };
+
+      const onLeave = () => {
+        active = false;
+        entry.classList.remove('is-tilting');
+        tRX = 0; tRY = 0; tGX = 50; tGY = 50;
+        if (raf === null) raf = requestAnimationFrame(tick);
+      };
+
+      wrap.addEventListener('pointerenter', onEnter);
+      wrap.addEventListener('pointermove', onMove);
+      wrap.addEventListener('pointerleave', onLeave);
+    });
+  }
+</script>
