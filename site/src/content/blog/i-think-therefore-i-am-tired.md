@@ -24,5 +24,5 @@ no one even noticed.</p>
 
 
 <br>
-<span style="font-weight: 600; color:rgba(210, 241, 219, 1) ;">Asmi </span>
+<span style="font-weight: 600; font-size: 1.15em; color: var(--color-secondary);">Asmi </span>
 <p></p>
