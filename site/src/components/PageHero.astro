@@ -6,7 +6,7 @@ interface Props {
   interactiveTitle?: boolean;
 }
 
-const { eyebrow, title, subtitle, interactiveTitle = false } = Astro.props;
+const { eyebrow, title, subtitle, interactiveTitle = true } = Astro.props;
 
 // Split server-side so the DOM always holds the real, readable text.
 // Nothing to revert for assistive tech, and the reveal is pure CSS — so it
