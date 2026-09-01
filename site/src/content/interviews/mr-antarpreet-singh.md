@@ -3,14 +3,14 @@ title: "Mr Antarpreet Singh | Founder of ADTA"
 photo: "/images/interviews/antarpreet-new-pic-dec-19-2019-img-1584-1.jpg"
 ---
 
-<div class="col-lg-6 pt-4 pt-lg-0" style="color: rgba(210, 241, 219, 1);">
+<div class="col-lg-6 pt-4 pt-lg-0">
 <p class="fst-italic">
           
 Echoes Club interviewed Mr Antarpreet Singh, an alumnus from the 1983 batch who is currently the founder of ADTA, a digital transformation advisory engaged with premier B-schools. ADTA provides teaching, consultation, research, and mentorship services in many distinguished fields. Mr Singh has more than 36 years of working experience and has served as the Director of Digital Learning at the Indian School of Business(ISB). He believes in the power of youth and, through his powers, is moulding up the next generation of leaders to usher the world into a brighter future.</p>
 <br><br>
 </div>
             
-<br><p style="color: rgba(210, 241, 219, 1);"><b style="color: rgba(255, 229, 229, 1);">Q. In this day and age, distance learning, online courses, and digital training have increased significantly. Not to mention that the pandemic alone has facilitated the transition of 91% of global institutions to online curriculum.
+<br><p><b>Q. In this day and age, distance learning, online courses, and digital training have increased significantly. Not to mention that the pandemic alone has facilitated the transition of 91% of global institutions to online curriculum.
 
 <br>Although online learning is more flexible and accessible, do you agree that certain aspects of education can only be taught through hands-on experience?</b>
 
@@ -19,7 +19,7 @@ Echoes Club interviewed Mr Antarpreet Singh, an alumnus from the 1983 batch who 
 It could enhance offline education using digital resources like apps, simulations, and recorded videos. Participating in various extracurricular activities and sports during my time in Thapar contributed to my overall development, which isn’t possible through the online medium. So, an amalgamation of digital and physical learning models is the ideal way forward.<br><br>
             
 <br>
-<b style="color: rgba(255, 229, 229, 1);">Q. As the Director of Digital Learning at ISB, you introduced new initiatives for Digital Learning and Education. What are some aspects of our Indian Education System that need a digital overhaul for its betterment?</b>
+<b>Q. As the Director of Digital Learning at ISB, you introduced new initiatives for Digital Learning and Education. What are some aspects of our Indian Education System that need a digital overhaul for its betterment?</b>
 <br><br>
 I was part of ISB for a tenure of 3 years. Now I am pursuing a PhD from IIM Indore.
 
@@ -31,7 +31,7 @@ Although devastating for humanity, the pandemic acted as a catalyst for digital 
 
 Even in pre-covid times, if an industrial conglomerate had to train 2000 employees in a sales-related course, the physical campus wasn’t possible because they depended upon online training.
 <br><br>
-<b style="color: rgba(255, 229, 229, 1);">Q. In one of your blogs, you once wrote that “I learn from youngsters”, so what differences do you find between youngsters today and back when you graduated and how it encourages you.</b>
+<b>Q. In one of your blogs, you once wrote that “I learn from youngsters”, so what differences do you find between youngsters today and back when you graduated and how it encourages you.</b>
 
 <br><br>I would like to refer to the millennials born after the ‘80s as digital natives. Since I was born in 1962, I would consider myself a digital immigrant.
 
@@ -41,7 +41,7 @@ Risk appetite at my time among people was close to none, but today the youngster
 
 
 
-<br><br><b style="color: rgba(255, 229, 229, 1);">Q. Your venture ADTA provides teaching and mentoring services to corporate employees to develop their soft skills. What areas of self-development should the students who will enter the corporate world soon focus on to prepare for the modern demands?</b>
+<br><br><b>Q. Your venture ADTA provides teaching and mentoring services to corporate employees to develop their soft skills. What areas of self-development should the students who will enter the corporate world soon focus on to prepare for the modern demands?</b>
 
 
 
@@ -53,7 +53,7 @@ It will help you to know that technology is not an end. It is a human-machine co
 
 
 
-<br><br><b style="color: rgba(255, 229, 229, 1);">Q. Due to the pandemic, unfortunately, our classes are going via an online medium. I would like to hear your insights on how campus life develops an individual in various aspects. What role did Thapar play in shaping your personality?</b>
+<br><br><b>Q. Due to the pandemic, unfortunately, our classes are going via an online medium. I would like to hear your insights on how campus life develops an individual in various aspects. What role did Thapar play in shaping your personality?</b>
 
 
 
@@ -63,7 +63,7 @@ In my opinion, campus life is a crucial aspect of the overall development of any
 
 
 
-<br><br><b style="color: rgba(255, 229, 229, 1);">Q. What would be your one piece of advice to the younger generation that is slowly and steadily picking up the reigns of the future?</b>
+<br><br><b>Q. What would be your one piece of advice to the younger generation that is slowly and steadily picking up the reigns of the future?</b>
 
 
 

@@ -3,7 +3,7 @@ title: "Jeeya Prakash | BE-ECE, Batch of 2022"
 photo: "/images/interviews/ms-jeeya.jpg"
 ---
 
-<div class="col-lg-6 pt-4 pt-lg-0" style="color: rgba(210, 241, 219, 1);">
+<div class="col-lg-6 pt-4 pt-lg-0">
 
 <p class="fst-italic">
 Echoes Club interviewed Jeeya Prakash, a 4th Year student majoring in Electronics and Communication
@@ -18,9 +18,9 @@ platform for the people of Thapar to share their stories. She recently published
 </p>
 </div>
           
-<p style="color: rgba(210, 241, 219, 1);">
+<p>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);"> Q. Literary writing is a cumbersome process in itself; evolving it to this level is no easy feat.
+<strong> Q. Literary writing is a cumbersome process in itself; evolving it to this level is no easy feat.
 What have your experiences been like in this journey?
   
 </strong>
@@ -32,7 +32,7 @@ and story writers. Ever since I signed up for it, I met some of the most creativ
 Although I identify myself as an engineer who wants to make a career in finance, I enjoy writing and don't
 plan to quit.
 <br><br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. What would be your best piece of advice for an amateur writer just stepping into the field of poetry or
 writing in general?
 
@@ -46,7 +46,7 @@ better way. I could have refined my writings, spent more time searching for bett
 figured out what was best for me.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. Being the co-founder of Humans of TIET, what, according to you, was the inspiration and motive behind
 the venture?
 
@@ -60,7 +60,7 @@ TIET, and we believe in students' voices. I am proud of the fact that the entire
 has so many ideas. It’s a place that consumes your opinion, nourishes it, and gives it the right direction.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. Since you have successfully published your first book, "Mirror," what challenges did you face in
 searching for and convincing a suitable publication?
 
@@ -76,7 +76,7 @@ I was in a rush to get it published. If I had waited and figured out the proper 
 have been different.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. How was your experience about interning at IIIT Allahabad in the field of Neurofinance?
 
 

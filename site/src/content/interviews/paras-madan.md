@@ -3,7 +3,7 @@ title: "Paras Madan | BE-COE, Batch of 2022"
 photo: "/images/interviews/paras-madan.jpg"
 ---
 
-<div class="col-lg-6 pt-4 pt-lg-0" style="color: rgba(210, 241, 219, 1);">
+<div class="col-lg-6 pt-4 pt-lg-0">
 
 <p class="fst-italic">
 Paras Madan, who is currently majoring in Computer Science Engineering, is an inspiring entrepreneur who is the founder of Cruxe, a unique content summarization platform and his previous venture, Analyticware, which has deployed its chatbot on a GoI website, Arogyaprahari.
@@ -17,9 +17,9 @@ Highly skilled in AI/ML, having interned in IIT Roorkee as well and holding the 
 </p>
 </div>
           
-<p style="color: rgba(210, 241, 219, 1);">
+<p>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);"> Q. Having a zeal to develop things has led you to set up two startups till now. What inspires you for this approach in life?
+<strong> Q. Having a zeal to develop things has led you to set up two startups till now. What inspires you for this approach in life?
 
 
 
@@ -33,7 +33,7 @@ I realized pretty early that 9-5 jobs aren't my thing, and I would prefer to be 
           
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. What makes you believe that your latest venture, Cruxe, has much better growth potential than your previous ventures?
 
 
@@ -46,7 +46,7 @@ Earlier startups failed because I was pretty naive about their whole idea, my in
 Evolving and learning constantly has led to a smooth ride for Cruxe in these initial phases. The team involved in this new venture is of a higher caliber than before, not to mention my knowledge of financial aspects, which has improved profoundly.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. Running a startup often involves reaching out to potential clients and investors. What are some of your principles and procedures behind such an approach?
 
 
@@ -60,7 +60,7 @@ To get a work opportunity, we have to approach potential clients, and it involve
 For seeking investments, startups follow a principle that if profit is there, it is shared equally, but in case of a loss, it’s burden has to be borne by the startup alone.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. Your Trash Collection Boat won the first prize in Hacksagon. Please give us some insights into the inspiration behind it and the technicalities of the project.
 
 
@@ -75,7 +75,7 @@ Our project was about developing an autonomous Trash Collection Boat inspired by
 Our project depicted a modern-day problem and thus helped us gain an upper hand in the competition
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. What are some of the lessons that you have learned from your past internships which you would like to share with all the students venturing into the professional fields?
 
 
@@ -85,7 +85,7 @@ Q. What are some of the lessons that you have learned from your past internships
 I once worked as an intern for two months where they promised me a certain amount of money but didn't even pay me a single penny. From this unpleasant experience, I learned that work must always be honored with credit and it must be given to the person who worked for it. My company’s aim is to provide timely payments to all the workers.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 
 Q. You have shown a lot of interest in the fields of AI and ML. What excites you about these domains, and what are your plans for the future?
 </strong>
