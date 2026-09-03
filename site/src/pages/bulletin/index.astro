@@ -23,6 +23,7 @@ function excerpt(body: string) {
             href={`/bulletin/${article.id}/`}
             title={article.data.title}
             cover={article.data.cover}
+            coverFit="contain"
             blurb={excerpt(article.body ?? '')}
             meta={article.data.author ? `By ${article.data.author}` : undefined}
             accent="secondary"
