@@ -1,8 +1,8 @@
 ---
 title: "The Hormuz Chokepoint: Maritime Vulnerability and the Escalation of Energy Warfare"
 author: "Aryan Malik"
-cover: "/images/bulletin/hormuz.png"
-order: 17
+cover: "/images/bulletin/6SepI.png"
+order: -5
 ---
 
 <p>
