@@ -2,7 +2,7 @@
 title: "One Officer Against the Odds: The Fight for Food Safety"
 author: "Dhruv Garg"
 cover: "/images/bulletin/foodsafety.png"
-order: 16
+order: -1
 ---
 
 <p>
