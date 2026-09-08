@@ -1,6 +1,6 @@
 ---
 title: "One Officer Against the Odds: The Fight for Food Safety"
-author: "Aman Kumar"
+author: "Dhruv Garg"
 cover: "/images/bulletin/foodsafety.png"
 order: 16
 ---
