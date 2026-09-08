@@ -13,5 +13,5 @@ Third was the one where it just shamelessly pours all day. When the day is still
 <br></p><p>And lastly, the one when the sky dresses up for murder and the clouds weep in agony.The one that destroys houses and breaks pots.The fury of water crashing on us.
 The rains tell us more about humans than we know. The excitement, peace, acceptance, and rage we go through. It is not only the rain that has 4 forms it is we who live in these forms.</p>
 <br>
-<span style="font-weight: 600; color:rgba(210, 241, 219, 1) ;">Pakhi </span>
+<span style="font-weight: 600; font-size: 1.15em; color: var(--color-secondary);">Pakhi </span>
 <p></p>

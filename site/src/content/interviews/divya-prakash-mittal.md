@@ -3,7 +3,7 @@ title: "Divya Prakash Mittal | BE-ECE, Batch of 2021"
 photo: "/images/interviews/divya-prakash-mittal.jpg"
 ---
 
-<div class="col-lg-6 pt-4 pt-lg-0" style="color: rgba(210, 241, 219, 1);">
+<div class="col-lg-6 pt-4 pt-lg-0">
 
 <p class="fst-italic">
 Echoes club interviewed Divya Prakash Mittal, a 4th-year student majoring in Electronics and Communication engineering at TIET. Experienced in development, Divya is a keen programmer and web developer and has bagged numerous awards in India’s most renowned coding competitions. 
@@ -14,9 +14,9 @@ Echoes club interviewed Divya Prakash Mittal, a 4th-year student majoring in Ele
 </p>
 </div>
           
-<p style="color: rgba(210, 241, 219, 1);">
+<p>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);"> 
+<strong> 
 Q. You started as an intern at JP Morgan, and now they are your employers. Give us some insight into your work experiences while interning and how they are different from that of an employee?
 </strong>
 <br>
@@ -24,7 +24,7 @@ Q. You started as an intern at JP Morgan, and now they are your employers. Give 
 From JP Morgan's point of view, there isn't much difference between being an intern and a full-time employee because they don’t differentiate that much. They expect you to do the same role if you are an employee or an intern. The company expects us to work on a project and build things that will help the business analysts who are working for the department.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. Since you have contributed to many open-source projects, how do you think it is different from doing your exclusive projects?
 
 <br>
@@ -36,7 +36,7 @@ Working on your projects is beneficial for learning. But I always encourage you 
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. How did you manage your time between academics, co-curricular and your passion for coding in the limited time of your college life and how CGPA plays an important role in this journey?
 
 
@@ -58,7 +58,7 @@ From my experience, I would suggest everyone to focus on their CGPA right from t
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. Holding the position of General Secretary for CCS would have incremented your administration and management skills. In your opinion, how does joining a society aligned to the interests of a student impact them? What are the key takeaways from your tenure at college societies?
 
 
@@ -79,7 +79,7 @@ I encourage everyone to become a part of any society that fits their interests. 
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. You made a database management for publications at Nava nalanda library. Can you give some insights on this project and why we're you keen on working on it?
 
 

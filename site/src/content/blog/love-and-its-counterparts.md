@@ -18,5 +18,5 @@ publishedLabel: "Released On 11th Of September 2025"
 
 
 <br>
-<span style="font-weight: 600; color:rgba(210, 241, 219, 1) ;">Prabhnoor Arora</span>
+<span style="font-weight: 600; font-size: 1.15em; color: var(--color-secondary);">Prabhnoor Arora</span>
 <p></p>

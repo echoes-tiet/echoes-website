@@ -3,7 +3,7 @@ title: "Ritwik Mehta | BE-ELE, Batch of 2022"
 photo: "/images/interviews/ritwik-mehta.jpeg"
 ---
 
-<div class="col-lg-6 pt-4 pt-lg-0" style="color: rgba(210, 241, 219, 1);">
+<div class="col-lg-6 pt-4 pt-lg-0">
 
 <p class="fst-italic">
 Echoes interviewed Mr. Ritwik Mehta, a 4th-year student majoring in Electrical Engineering with the aspirations and the heart to become a policymaker and leader in the future. He has worked with multiple NGOs and organizations and is currently among the board of directors at Sakonsa. With his heart set in politics, he has founded a policy think tank start-up NITITANTRA which aims to provide in-depth and constructive policymaking to build and strengthen our nation.
@@ -12,9 +12,9 @@ Echoes interviewed Mr. Ritwik Mehta, a 4th-year student majoring in Electrical E
 </p>
 </div>
           
-<p style="color: rgba(210, 241, 219, 1);">
+<p>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);"> 
+<strong> 
 Q. You are among the board of directors at Sakonsa, an organization that strives to promote sustainable development goals to the young generation. What's been the driving force around the initiative? How are you utilizing your position to influence change in the present and the future?
   
   
@@ -27,7 +27,7 @@ I joined Sakonsa in April 2021 as a marketing assistant since Sakonsa focused on
   
 Along with some other organizations, I represented India at the UN, where we had to draft a bill for migrant and refugees policy that the government later considered.
 <br><br>  
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. Why is it essential for any country to have specific policies for refugees and migrants?
 
 
@@ -61,7 +61,7 @@ Initially, there was a zeal in me to be an electrical engineer like my father. S
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. If you were an Indian leader, what policies and areas of Indian politics would you want to emphasize?
 
 
@@ -78,7 +78,7 @@ Presently the ministry of finance and education needs a lot of attention. Recent
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q. You have worked as a content writer in many internship opportunities. What facet of creative writing grabs your interest? What practices do you follow to improve your skillset?
 
 
@@ -92,7 +92,7 @@ I formed an interest in writing essays during my schooling period. To improve wr
 Nowadays, content writing is not enough, but one should also have skills like digital marketing for an internship to prepare for it.
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 
 Q. You have been at the forefront among the members involved in the project Naritva, which generates awareness about using biodegradable sanitary pads and installing their dispensing machines on the campus. How did you identify this issue, and what were the challenges involved in bringing this to notice in everyone's eyes, including the college administration?
 

@@ -54,5 +54,5 @@ Or is it... a tock?<br>
 You decide.</p>
 
 <br>
-<span style="font-weight: 600; color:rgba(210, 241, 219, 1) ;">Thetsu </span>
+<span style="font-weight: 600; font-size: 1.15em; color: var(--color-secondary);">Thetsu </span>
 <p></p>

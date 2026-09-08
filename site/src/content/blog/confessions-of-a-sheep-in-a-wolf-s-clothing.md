@@ -14,5 +14,5 @@ I hate people who take pity on themselves. So I am no self-sympathiser but what 
 
 </p>
 <br>
-<span style="font-weight: 600; color:rgba(210, 241, 219, 1) ;">Nimar Sidhu </span>
+<span style="font-weight: 600; font-size: 1.15em; color: var(--color-secondary);">Nimar Sidhu </span>
 <p></p>

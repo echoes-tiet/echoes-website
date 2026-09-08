@@ -17,19 +17,17 @@ const { Content } = await render(interview);
 
     <h1 class="mt-4 font-display text-3xl font-bold leading-tight text-paper md:text-4xl">{interview.data.title}</h1>
 
-    <div class="mt-8 grid gap-8 md:grid-cols-[300px_1fr]">
+    <div class="prose-body mt-8 [display:flow-root]">
       {
         interview.data.photo && (
           <img
             src={interview.data.photo}
             alt=""
-            class="aspect-[4/5] w-full border border-black/10 object-cover"
+            class="mb-6 aspect-[4/5] w-56 border border-black/10 object-cover sm:float-left sm:mr-8 sm:mb-4 sm:w-72"
           />
         )
       }
-      <div class="prose-body">
-        <Content />
-      </div>
+      <Content />
     </div>
   </article>
 </Layout>

@@ -3,7 +3,7 @@ title: "Gagandeep Reehal | BE-COE, Batch of 2023"
 photo: "/images/interviews/gagandeep.png"
 ---
 
-<div class="col-lg-6 pt-4 pt-lg-0" style="color: rgba(210, 241, 219, 1);">
+<div class="col-lg-6 pt-4 pt-lg-0">
 
 <p class="fst-italic">
 Echoes Club interviewed Gagandeep Singh Reehal, a 2nd year student majoring in Computer Science. At the age of 19, Gagandeep is the co-founder and the CEO of a company called Minus Zero which aims to produce India’s first self-driving vehicle. Besides this, Gagandeep is an avid speaker and has addressed massive crowds at various public speaking conferences such as TEDx. He has also been a mentor/judge at numerous hackathons around the country.
@@ -17,16 +17,16 @@ Echoes Club interviewed Gagandeep Singh Reehal, a 2nd year student majoring in C
 </p>
 </div>
           
-<p style="color: rgba(210, 241, 219, 1);">
+<p>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">Q- How did the idea of Minus Zero strike you? What was the inspiration behind it?
+<strong>Q- How did the idea of Minus Zero strike you? What was the inspiration behind it?
 </strong>
 <br>
 <br>
 A- The company originated as a research paper based on artificial intelligence but later, we realized its potential and came up with Self-Driving Cars. My brother suggested the name 'Minus Zero' which mathematically means a unique and unattainable number.
 <br>
 <br>  
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q- Considering the current market scenario, how difficult it is for you to focus on your goal and how do you plan to overcome this situation?
 
 
@@ -43,7 +43,7 @@ A- It is quite tough actually. In India, the disorientated traffic system makes 
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q- What are some steps that you have taken to prompt potential investors for your startup?
 
 
@@ -61,7 +61,7 @@ A- Companies such as Nvidia and AWS cloud computing services have played a vital
 
           
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q- You have been a part of TEDx and various talk shows. What are your suggestions for people who lack the required skills?
 
 
@@ -79,7 +79,7 @@ A- People often confuse stage fear with the fear of being judged. No one in the 
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q- You are an avid learner and a confident speaker. Did this interest grow naturally or did you put in some extra efforts?
 
 
@@ -93,7 +93,7 @@ A- My interest in public speaking rounds up from my school. My mother was one of
 
 <br>
 <br>
-<strong style="color: rgba(255, 229, 229, 1);">
+<strong>
 Q- What are some tips that you would like to give from your experience?
 
 

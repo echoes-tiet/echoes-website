@@ -1,30 +1,160 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
+
+const [editions, blogPosts, bulletinPosts, interviews, members] = await Promise.all([
+  getCollection('editions'),
+  getCollection('blog'),
+  getCollection('bulletin'),
+  getCollection('interviews'),
+  getCollection('members'),
+]);
+
+const storyCount = blogPosts.length + bulletinPosts.length + interviews.length;
+
+const stats = [
+  { value: String(editions.length).padStart(2, '0'), label: 'Editions published' },
+  { value: String(storyCount), label: 'Stories, briefs & interviews' },
+  { value: String(members.length), label: 'Students on the team' },
+  { value: '2021', label: 'Est. — still going' },
+];
+
+const accentVars = ['--color-primary', '--color-secondary', '--color-accent'];
+
+const pillars = [
+  {
+    href: '/editions/',
+    kicker: `${editions.length} issues`,
+    title: 'The Magazine',
+    blurb: 'Our full-length editions — cover to cover, theme to theme.',
+  },
+  {
+    href: '/bulletin/',
+    kicker: `${bulletinPosts.length} briefs`,
+    title: 'The Bulletin',
+    blurb: "What's happening, in brief — campus news and current affairs.",
+  },
+  {
+    href: '/blog/',
+    kicker: `${blogPosts.length} pieces`,
+    title: 'The Blog',
+    blurb: 'Essays, reviews, and reflections written by the club.',
+  },
+  {
+    href: '/interviews/',
+    kicker: `${interviews.length} conversations`,
+    title: 'Interviews',
+    blurb: 'Alumni, faculty, and industry leaders in their own words.',
+  },
+];
 ---
 
 <Layout title="About — Echoes" description="Echoes is the student's panorama of Thapar Institute of Engineering & Technology.">
-  <PageHero eyebrow="About" title="The student's panorama of TIET" />
+  <PageHero
+    eyebrow="About"
+    title="The student's panorama of TIET"
+    subtitle="A student-run magazine covering campus life, culture, and everything in between — since 2021."
+  />
 
-  <section class="mx-auto max-w-7xl px-5 py-14">
-    <div class="grid gap-10 md:grid-cols-2 md:items-center">
-      <img src="/images/brand/group-picture.jpg" alt="The Echoes team" class="border border-black/10 object-cover" />
+  <section class="mx-auto max-w-7xl px-5 py-16 md:py-20">
+    <div class="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start md:gap-16">
       <div class="prose-body text-lg">
-        <p>
+        <p class="font-display text-2xl leading-snug text-paper md:text-[1.75rem]">
           Echoes ensures to cross the threshold beyond what our eyes can perceive. There are stories hidden in
-          crevices of the world and often in the palm of our hands. We are a group of young and diverse-minded
-          individuals who hope to amplify everything through media. Along with engaging content, we strive to
-          present fresh and authentic news from across the college. However, we do not stop there and take steps to
-          enlighten our audience with the world's occurrences as well.
+          crevices of the world and often in the palm of our hands.
         </p>
-        <p>We envision touching multiple dimensions of journalism, broadcasting, and media coverage, and we aim to do a lot more than just that.</p>
+        <p>
+          We are a group of young and diverse-minded individuals who hope to amplify everything through media.
+          Along with engaging content, we strive to present fresh and authentic news from across the college.
+          However, we do not stop there and take steps to enlighten our audience with the world's occurrences as
+          well. We envision touching multiple dimensions of journalism, broadcasting, and media coverage, and we aim
+          to do a lot more than just that.
+        </p>
         <p>
           Being The Student's Panorama of TIET, we strive towards giving the students a holistic experience that
           encompasses the cultural, technical, sports, and academic aspects of this college. We aim to reflect the
           spectrum of achievements and activities of our college societies and students, and give updates regarding
           the college ongoings and upcomings.
         </p>
-        <p>But to put it all simply, Echoes is a club of the students, by the students, and for the students.</p>
+      </div>
+
+      <figure class="md:sticky md:top-24">
+        <div class="aspect-[16/10] w-full overflow-hidden border border-black/10 bg-surface-2">
+          <img
+            src="/images/brand/group-picture.jpg"
+            alt="Members of the Echoes team gathered on stage, holding up illuminated letters spelling ECHOES"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <figcaption class="mt-4 font-display text-sm italic text-muted">
+          The Echoes team — students, by students, for students.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="border-y border-paper/10 bg-surface">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 px-5 py-14 sm:grid-cols-4">
+      {
+        stats.map((stat, i) => (
+          <div class="text-center" style={`color: var(${accentVars[i % accentVars.length]});`}>
+            <p class="font-display text-5xl md:text-6xl">{stat.value}</p>
+            <p class="kicker mt-2 text-muted">{stat.label}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-5 py-20 text-center">
+    <span class="mx-auto block h-0.5 w-16 bg-primary" aria-hidden="true"></span>
+    <p class="mt-8 font-display text-3xl italic leading-snug text-paper md:text-4xl">
+      &ldquo;Echoes is a club of the students, by the students, and for the students.&rdquo;
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-7xl border-t border-paper/10 px-5 py-16">
+    <h2 class="font-display text-2xl text-paper md:text-3xl">
+      What we cover<span class="text-primary">.</span>
+    </h2>
+
+    <div class="mt-8 grid gap-px bg-paper/10 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        pillars.map((pillar, i) => (
+          <a
+            href={pillar.href}
+            class="group flex flex-col gap-3 bg-ink p-6 transition-colors hover:bg-surface"
+            style={`--pillar-accent: var(${accentVars[i % accentVars.length]});`}
+          >
+            <span class="kicker" style="color: var(--pillar-accent);">
+              {pillar.kicker}
+            </span>
+            <h3 class="font-display text-xl font-semibold text-paper">{pillar.title}</h3>
+            <p class="text-sm text-muted">{pillar.blurb}</p>
+            <span
+              class="mt-auto inline-flex items-center gap-1 pt-2 text-sm font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              style="color: var(--pillar-accent);"
+            >
+              Explore <span aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="border-t border-paper/10">
+    <div class="mx-auto max-w-7xl px-5 py-16 text-center">
+      <p class="kicker text-primary">Join us</p>
+      <h2 class="mt-3 font-display text-3xl text-paper md:text-4xl">Want to be part of the next issue?</h2>
+      <p class="mx-auto mt-4 max-w-lg text-muted">
+        We're always looking for writers, photographers, designers, and editors who want to tell TIET's stories.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="/register/" class="btn btn-primary">Join Echoes</a>
+        <a href="/team/" class="btn btn-outline text-paper">Meet the team</a>
       </div>
     </div>
   </section>
