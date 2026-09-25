@@ -1,8 +1,8 @@
 ---
 title: "India's Multi-Billion Dollar AI Push"
 author: "Aman Kumar"
-cover: "/images/bulletin/ai-semicon.png"
-order: 18
+cover: "/images/bulletin/6SepT.png"
+order: -6
 ---
 
 <p>
