@@ -1,7 +1,7 @@
 ---
 title: "Navigating the New Geopolitical Architecture: Global Realignment and Strategic Hedging in Early 2026"
 author: "Aman Kumar"
-cover: "/images/bulletin/geopolitics.png"
+cover: "/images/bulletin/23OctI.png"
 order: -10
 ---
 
