@@ -1,7 +1,7 @@
 ---
 title: "Ramayana: The Epic Gamble | Faithful Adaptation or ₹4,000 Crore Cash Grab?"
 author: "Shashwat Singh"
-cover: "/images/bulletin/ramayana.png"
+cover: "/images/bulletin/23OctE.png"
 order: -11
 ---
 
