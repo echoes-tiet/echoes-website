@@ -1,7 +1,7 @@
 ---
 title: "Decoding the Sun: India’s Aditya-L1 Joins Forces with Europe’s Proba-3"
 author: "Madalsa Sehgal"
-cover: "/images/bulletin/aditya-proba.png"
+cover: "/images/bulletin/23OctS.png"
 order: -12
 ---
 
